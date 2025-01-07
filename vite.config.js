@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@mui/icons-material'],
+      external: [],
     },
+  },
+  optimizeDeps: {
+    include: ['@emotion/react', '@mui/icons-material'],
   },
 })
