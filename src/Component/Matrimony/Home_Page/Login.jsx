@@ -87,7 +87,7 @@ const Login = () => {
               placeholder=" Enter Name"
             />
             <div className="flex w-[90%] md:w-[80%] mx-auto mt-5 md:mt-10 justify-between">
-              <div className="w-[20%] flex border border-black rounded-lg justify-between  p-1 md:p-1">
+              <div className="w-[20%] flex border border-black rounded-lg justify-between items-center  p-1 md:p-1">
                 <div className="">+91</div>
                 <div>
                   <IoIosArrowDown className="mt-1" />
