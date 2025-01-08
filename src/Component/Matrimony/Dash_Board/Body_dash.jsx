@@ -18,7 +18,7 @@ const Body_dash = () => {
         </div>
       </div>
       <div className="flex justify-center w-[100%] pb-10 px-24 gap-x-4 ">
-        <div className="w-[25%]  sticky top-20  border h-fit rounded-xl shadow-sm flex flex-col">
+        <div className="w-[25%]   sticky top-20   border h-fit rounded-xl shadow-sm flex flex-col">
           <div>
             <img
               className="w-14 mx-auto mt-6 rounded-full"
@@ -66,23 +66,12 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div className="text-sm font-medium text-gray-600">
+              <div onClick={()=>navigate("/pre")} className="text-sm cursor-pointer font-medium text-gray-600">
                 Edit Preferences
               </div>
             </div>
 
-            <div className="flex  gap-x-3">
-              <div>
-                <img
-                  className="w-5"
-                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/menu_horoscope.svg"
-                  alt=""
-                />
-              </div>
-              <div className="text-sm font-medium text-gray-600">
-                Generate Horoscope
-              </div>
-            </div>
+            
 
             <div className="flex  gap-x-3">
               <div>
@@ -92,7 +81,7 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div className="text-sm font-medium text-gray-600">
+              <div onClick={()=>navigate("/ver")} className="text-sm cursor-pointer font-medium text-gray-600">
                 Verify Your Profile
               </div>
             </div>
