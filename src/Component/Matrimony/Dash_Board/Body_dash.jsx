@@ -18,7 +18,7 @@ const Body_dash = () => {
         </div>
       </div>
       <div className="flex justify-center w-[100%] pb-10 px-24 gap-x-4 ">
-        <div className="w-[25%]   sticky top-20   border h-fit rounded-xl shadow-sm flex flex-col">
+        <div className="w-[25%]  sticky top-20  border h-fit rounded-xl shadow-sm flex flex-col">
           <div>
             <img
               className="w-14 mx-auto mt-6 rounded-full"
@@ -87,19 +87,10 @@ const Body_dash = () => {
             </div>
           </div>
           <div className=" flex   gap-y-5 flex-col p-5">
-            <div className="flex  gap-x-3">
-              <div>
-                <img
-                  className="w-5"
-                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/setting.svg"
-                  alt=""
-                />
-              </div>
-              <div className="text-sm font-medium text-gray-600">Settings</div>
-            </div>
+           
 
-            <div className="flex justify-between ">
-              <div className="flex">
+            
+              <div className="flex gap-x-3">
                 <div>
                   <img
                     className="w-5"
@@ -107,11 +98,9 @@ const Body_dash = () => {
                     alt=""
                   />
                 </div>
-                <div className="text-sm font-medium text-gray-600">Help</div>
-              </div>
-              <div>
-                <KeyboardArrowDownIcon className="text-gray-500 -mt-2" />
-              </div>
+                <div className="text-sm font-medium text-gray-600 cursor-pointer" onClick={()=> navigate("/help")}>Help</div>
+              
+            
             </div>
 
             <div className="flex  gap-x-3">
