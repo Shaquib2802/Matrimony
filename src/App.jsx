@@ -12,6 +12,7 @@ import Contact_Pol from "./Component/Matrimony/Profile/Contact_Pol";
 import Safe_Bottom from "./Component/Matrimony/Profile/Safe_Bottom";
 import Abuse from "./Component/Matrimony/Profile/Abuse";
 import Prime_Header from "./Component/Matrimony/Prime/Prime_Header";
+import Setting from "./Component/Matrimony/Profile/Setting";
 
 const App = () => {
   return (
@@ -31,8 +32,11 @@ const App = () => {
           <Route path="/help" element={<Help/>} />
           <Route path="/safe" element={<Safe/>} />
           <Route path="/prime" element={<Prime_Header/>} />
+          <Route path="/prime" element={<Prime_Header/>} />
+          <Route path="/set" element={<Setting/>} />
         </Routes>
       </BrowserRouter>
+      
       {/* <Safe/> */}
       {/* <Home/> */}
       {/* <Contact_Pol/> */}

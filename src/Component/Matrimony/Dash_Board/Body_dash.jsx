@@ -120,12 +120,12 @@ const Body_dash = () => {
               <div>
                 <img
                   className="w-5"
-                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/success-story.svg"
+                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/setting.svg"
                   alt=""
                 />
               </div>
-              <div className="text-sm font-medium text-gray-600">
-                Success Stories
+              <div onClick={()=>navigate("/set")}  className="text-sm font-medium text-gray-600 cursor-pointer">
+                Setting
               </div>
             </div>
           </div>
