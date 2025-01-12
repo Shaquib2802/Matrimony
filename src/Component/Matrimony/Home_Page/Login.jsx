@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   const handleClose = () => {
-    setIsOpen(false); // Close the dropdown when called
+    setIsOpen(false); 
   };
   const navigate = useNavigate();
   return (

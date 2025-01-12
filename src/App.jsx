@@ -6,6 +6,11 @@ import Profile from "./Component/Matrimony/Profile/Profile";
 import Edit from "./Component/Matrimony/Profile/Edit";
 import Verify from "./Component/Matrimony/Profile/Verify";
 import Help from "./Component/Matrimony/Profile/Help";
+import Safe from "./Component/Matrimony/Profile/Safe";
+import Home from "./Component/Matrimony/Profile/Home";
+import Contact_Pol from "./Component/Matrimony/Profile/Contact_Pol";
+import Safe_Bottom from "./Component/Matrimony/Profile/Safe_Bottom";
+import Abuse from "./Component/Matrimony/Profile/Abuse";
 
 const App = () => {
   return (
@@ -15,7 +20,7 @@ const App = () => {
       {/* <Profile /> */}
       {/* <Login/> */}
       {/* <Body_Edit/> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home_Page />} />
           <Route path="/dash" element={<Dashboard />} />
@@ -24,7 +29,13 @@ const App = () => {
           <Route path="/ver" element={<Verify/>} />
           <Route path="/help" element={<Help/>} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Safe/>
+      {/* <Home/> */}
+      {/* <Contact_Pol/> */}
+      {/* <Abuse/> */}
+      
+     
     </div>
   );
 };
