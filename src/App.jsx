@@ -11,6 +11,7 @@ import Home from "./Component/Matrimony/Profile/Home";
 import Contact_Pol from "./Component/Matrimony/Profile/Contact_Pol";
 import Safe_Bottom from "./Component/Matrimony/Profile/Safe_Bottom";
 import Abuse from "./Component/Matrimony/Profile/Abuse";
+import Prime_Header from "./Component/Matrimony/Prime/Prime_Header";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
       {/* <Profile /> */}
       {/* <Login/> */}
       {/* <Body_Edit/> */}
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home_Page />} />
           <Route path="/dash" element={<Dashboard />} />
@@ -28,12 +29,15 @@ const App = () => {
           <Route path="/pre" element={<Edit />} />
           <Route path="/ver" element={<Verify/>} />
           <Route path="/help" element={<Help/>} />
+          <Route path="/safe" element={<Safe/>} />
+          <Route path="/prime" element={<Prime_Header/>} />
         </Routes>
-      </BrowserRouter> */}
-      <Safe/>
+      </BrowserRouter>
+      {/* <Safe/> */}
       {/* <Home/> */}
       {/* <Contact_Pol/> */}
       {/* <Abuse/> */}
+      {/* <Prime_Header/> */}
       
      
     </div>

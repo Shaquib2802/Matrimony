@@ -12,7 +12,7 @@ const Body_dash = () => {
           <div className="border  border-orange-500 text-sm pt-2 text-orange-500 font-semibold bg-orange-100 rounded-3xl text-center  w-[55%] ">
             Regular
           </div>
-          <div className=" text-center w-[45%] text-sm pt-2 font-semibold">
+          <div onClick={()=>navigate("/prime")} className=" text-center w-[45%] text-sm pt-2 font-semibold">
             PRIME
           </div>
         </div>
@@ -111,7 +111,7 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div className="text-sm font-medium text-gray-600">
+              <div onClick={()=>navigate("/safe")} className="text-sm font-medium text-gray-600">
                 Safe Matrimony
               </div>
             </div>
