@@ -3,8 +3,10 @@ import { TbEyeFilled } from "react-icons/tb";
 import { MdEdit } from "react-icons/md";
 import { IoMdArrowDropright } from "react-icons/io";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
+import { useNavigate } from "react-router-dom";
 
 const Body_Pro = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-[100%] h-[100%] pt-10 bg-gray-100">
       <div className="flex mx-32    gap-x-5 ">
@@ -21,7 +23,7 @@ const Body_Pro = () => {
                     />
                   </div>
                 </div>
-                <div className="text-center text-sm p-1 text-blue-500">
+                <div onClick={()=> navigate("/pho")} className="text-center cursor-pointer text-sm p-1 text-blue-500">
                   Add / Edit Photos
                 </div>
               </div>
@@ -54,7 +56,7 @@ const Body_Pro = () => {
                   <div>
                     <TbEyeFilled className="text-2xl text-blue-700" />
                   </div>
-                  <div className="text-blue-600">Profile Preview</div>
+                  <div className="text-blue-600 cursor-pointer" onClick={()=> navigate("/prev")}>Profile Preview</div>
                 </div>
               </div>
             </div>

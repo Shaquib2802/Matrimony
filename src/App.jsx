@@ -11,6 +11,8 @@ import Profile from "./Component/Matrimony/Profile/Profile";
 import Safe from "./Component/Matrimony/Profile/Safe";
 import Setting from "./Component/Matrimony/Profile/Setting";
 import Verify from "./Component/Matrimony/Profile/Verify";
+import Photo from "./Component/Matrimony/Dash_Board/Photo";
+import Preview from "./Component/Matrimony/Profile/Preview";
 
 const App = () => {
   return (
@@ -32,7 +34,9 @@ const App = () => {
           <Route path="/prime" element={<Prime_Header />} />
           <Route path="/set" element={<Setting />} />
           <Route path="/upg" element={<Upgrade/>} />
-          <Route path="/hov" element={<Hover/>} />
+          <Route path="/pho" element={<Photo/>} />
+          <Route path="/prev" element={<Preview/>} />
+
         </Routes>
       </BrowserRouter>
 
