@@ -12,7 +12,10 @@ const Body_dash = () => {
           <div className="border  border-orange-500 text-sm pt-2 text-orange-500 font-semibold bg-orange-100 rounded-3xl text-center  w-[55%] ">
             Regular
           </div>
-          <div onClick={()=>navigate("/prime")} className=" text-center w-[45%] text-sm pt-2 font-semibold">
+          <div
+            onClick={() => navigate("/prime")}
+            className=" text-center w-[45%] text-sm pt-2 font-semibold"
+          >
             PRIME
           </div>
         </div>
@@ -39,9 +42,12 @@ const Body_dash = () => {
             Membership: Free
           </div>
           <div className="text-black mt-2  font-normal text-sm text-center">
-            Become a paid member now6
+            Become a paid member now
           </div>
-          <div className="border p-1 border-orange-600 mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-orange-500 mx-auto">
+          <div
+            onClick={()=> navigate("/upg")}
+            className="border cursor-pointer p-1 border-orange-600 mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-orange-500 mx-auto"
+          >
             Upgrade
           </div>
           <div className="border flex mt-5  gap-y-5 flex-col p-5">
@@ -53,7 +59,10 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div onClick={()=>navigate("/pro")} className="text-sm cursor-pointer font-medium text-gray-600">
+              <div
+                onClick={() => navigate("/pro")}
+                className="text-sm cursor-pointer font-medium text-gray-600"
+              >
                 Edit Profile
               </div>
             </div>
@@ -66,12 +75,13 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div onClick={()=>navigate("/pre")} className="text-sm cursor-pointer font-medium text-gray-600">
+              <div
+                onClick={() => navigate("/pre")}
+                className="text-sm cursor-pointer font-medium text-gray-600"
+              >
                 Edit Preferences
               </div>
             </div>
-
-            
 
             <div className="flex  gap-x-3">
               <div>
@@ -81,26 +91,29 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div onClick={()=>navigate("/ver")} className="text-sm cursor-pointer font-medium text-gray-600">
+              <div
+                onClick={() => navigate("/ver")}
+                className="text-sm cursor-pointer font-medium text-gray-600"
+              >
                 Verify Your Profile
               </div>
             </div>
           </div>
           <div className=" flex   gap-y-5 flex-col p-5">
-           
-
-            
-              <div className="flex gap-x-3">
-                <div>
-                  <img
-                    className="w-5"
-                    src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/help.svg"
-                    alt=""
-                  />
-                </div>
-                <div className="text-sm font-medium text-gray-600 cursor-pointer" onClick={()=> navigate("/help")}>Help</div>
-              
-            
+            <div className="flex gap-x-3">
+              <div>
+                <img
+                  className="w-5"
+                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/help.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                className="text-sm font-medium text-gray-600 cursor-pointer"
+                onClick={() => navigate("/help")}
+              >
+                Help
+              </div>
             </div>
 
             <div className="flex  gap-x-3">
@@ -111,7 +124,10 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div onClick={()=>navigate("/safe")} className="text-sm font-medium text-gray-600">
+              <div
+                onClick={() => navigate("/safe")}
+                className="text-sm font-medium text-gray-600"
+              >
                 Safe Matrimony
               </div>
             </div>
@@ -124,7 +140,10 @@ const Body_dash = () => {
                   alt=""
                 />
               </div>
-              <div onClick={()=>navigate("/set")}  className="text-sm font-medium text-gray-600 cursor-pointer">
+              <div
+                onClick={() => navigate("/set")}
+                className="text-sm font-medium text-gray-600 cursor-pointer"
+              >
                 Setting
               </div>
             </div>
@@ -150,7 +169,7 @@ const Body_dash = () => {
             <div className="text-white text-xs left-36 absolute top-10 font-medium">
               Get a flat ₹3700 off on 3 month Gold
             </div>
-            <div className="border absolute right-3 top-6  border-gray-500 rounded-2xl  text-center  text-sm w-32 h-8 pt-1 bg-[#ffc500]">
+            <div onClick={()=>navigate("/upg")} className="border cursor-pointer absolute right-3 top-6  border-gray-500 rounded-2xl  text-center  text-sm w-32 h-8 pt-1 bg-[#ffc500]">
               Upgrade Now
             </div>
             <div className="text-[50%] text-gray-200 font-medium absolute top-14 right-5">
