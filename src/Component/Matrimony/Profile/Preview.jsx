@@ -2,6 +2,7 @@ import React from "react";
 import HeaderDash from "../Dash_Board/HeaderDash";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { FaChevronRight } from "react-icons/fa";
+import Bottom_dash from "../Dash_Board/Bottom_dash";
 
 const Preview = () => {
   return (
@@ -542,6 +543,7 @@ const Preview = () => {
           </div>
         </div>
       </div>
+      <Bottom_dash/>
     </div>
   );
 };
