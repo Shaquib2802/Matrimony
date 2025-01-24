@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./Component/Matrimony/Dash_Board/Dashboard";
-import Hover from "./Component/Matrimony/Dash_Board/Hover";
+/* import Hover from "./Component/Matrimony/Dash_Board/Hover"; */
 import Upgrade from "./Component/Matrimony/Dash_Board/Upgrade";
 import Home_Page from "./Component/Matrimony/Home_Page/Home_Page";
 import Prime_Header from "./Component/Matrimony/Prime/Prime_Header";
@@ -13,6 +13,7 @@ import Setting from "./Component/Matrimony/Profile/Setting";
 import Verify from "./Component/Matrimony/Profile/Verify";
 import Photo from "./Component/Matrimony/Dash_Board/Photo";
 import Preview from "./Component/Matrimony/Profile/Preview";
+import Matches from "./Component/Matrimony/NavBar/Matches";
 
 const App = () => {
   return (
@@ -33,10 +34,10 @@ const App = () => {
           <Route path="/safe" element={<Safe />} />
           <Route path="/prime" element={<Prime_Header />} />
           <Route path="/set" element={<Setting />} />
-          <Route path="/upg" element={<Upgrade/>} />
-          <Route path="/pho" element={<Photo/>} />
-          <Route path="/prev" element={<Preview/>} />
-
+          <Route path="/upg" element={<Upgrade />} />
+          <Route path="/pho" element={<Photo />} />
+          <Route path="/prev" element={<Preview />} />
+          <Route path="/mat" element={<Matches />} />
         </Routes>
       </BrowserRouter>
 

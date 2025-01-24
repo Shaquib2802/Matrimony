@@ -23,7 +23,10 @@ const Body_Pro = () => {
                     />
                   </div>
                 </div>
-                <div onClick={()=> navigate("/pho")} className="text-center cursor-pointer text-sm p-1 text-blue-500">
+                <div
+                  onClick={() => navigate("/pho")}
+                  className="text-center cursor-pointer text-sm p-1 text-blue-500"
+                >
                   Add / Edit Photos
                 </div>
               </div>
@@ -56,7 +59,12 @@ const Body_Pro = () => {
                   <div>
                     <TbEyeFilled className="text-2xl text-blue-700" />
                   </div>
-                  <div className="text-blue-600 cursor-pointer" onClick={()=> navigate("/prev")}>Profile Preview</div>
+                  <div
+                    className="text-blue-600 cursor-pointer"
+                    onClick={() => navigate("/prev")}
+                  >
+                    Profile Preview
+                  </div>
                 </div>
               </div>
             </div>
@@ -511,7 +519,9 @@ const Body_Pro = () => {
               Add Horoscope ►
             </div>
           </div>
-          <div className="bg-white text-sm text-center p-1 mt-3 text-blue-600 font-semibold">View More ▼</div>
+          <div className="bg-white text-sm text-center p-1 mt-3 text-blue-600 font-semibold">
+            View More ▼
+          </div>
         </div>
       </div>
       <Bottom_dash />

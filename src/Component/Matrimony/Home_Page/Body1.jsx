@@ -24,11 +24,11 @@ const Body1 = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className=" h-full  bg-white bg-opacity-50 z-50 ">
-          <div className="absolute   md:w-[70vw] lg:w-[45vw] w-[80vw] -top-28 md:-top-48 left-[10%] md:-left-[10%] lg:left-[20%]">
+        <div className=" h-full  bg-white bg-opacity-50 z-40 ">
+          <div className="absolute   md:w-[70vw] lg:w-[45vw] w-[80vw] -top-28 md:-top-56 left-[10%] md:-left-[10%] lg:left-[20%]">
             <Login />
           </div>
-          <div className="h-24   bg-white absolute z-50  md:w-[100%] top-[90%] md:top-[70%]  md:ml-0 mt-20 md:mt-0 block  md:flex md:justify-evenly items-center">
+          <div className="h-24   bg-white absolute z-20 md:w-[100%] top-[90%] md:top-[70%]  md:ml-0 mt-20 md:mt-0 block  md:flex md:justify-evenly items-center">
             <div className="flex justify-start gap-x-4 m-10 md:m-0 ">
               <div>
                 <img

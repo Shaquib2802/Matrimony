@@ -515,35 +515,43 @@ const Preview = () => {
               To serve you better
             </div>
             <div className=" ">
-              <img className="mx-auto my-5"
+              <img
+                className="mx-auto my-5"
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/outlet-placeholder.svg"
                 alt=""
               />
             </div>
-            <div className="text-center text-sm  w-[80%] font-semibold mx-auto">Visit any of our 140+ matrimony Branches</div>
-            <div className="p-1 bg-orange-500 rounded-xl w-[50%] mx-auto text-center text-sm text-white my-5 font-semibold">View Branch</div>
+            <div className="text-center text-sm  w-[80%] font-semibold mx-auto">
+              Visit any of our 140+ matrimony Branches
+            </div>
+            <div className="p-1 bg-orange-500 rounded-xl w-[50%] mx-auto text-center text-sm text-white my-5 font-semibold">
+              View Branch
+            </div>
           </div>
           <div className="bg-orange-50 rounded-xl ">
             <div className="text-lg font-semibold mt-9 w-[80%] text-center mx-auto">
-            Millions of happy
-            marriages
+              Millions of happy marriages
             </div>
             <div className="mx-auto text-center text-sm mt-5">
-            Matched Through
-            BharatMatrimony
+              Matched Through BharatMatrimony
             </div>
             <div className=" ">
-              <img className="mx-auto my-5"
+              <img
+                className="mx-auto my-5"
                 src="https://bh-imgs.matrimonycdn.com/successphoto/hindi/1/2/H12162843_SUCCESS_TS.jpg"
                 alt=""
               />
             </div>
-            <div className="text-center text-sm   font-semibold mx-auto">Shubham Sharma & Sonali Sharma</div>
-            <div className="p-1 bg-orange-600 rounded-2xl w-[50%] mx-auto text-center text-sm text-white my-5 font-semibold">Read Their Story</div>
+            <div className="text-center text-sm   font-semibold mx-auto">
+              Shubham Sharma & Sonali Sharma
+            </div>
+            <div className="p-1 bg-orange-600 rounded-2xl w-[50%] mx-auto text-center text-sm text-white my-5 font-semibold">
+              Read Their Story
+            </div>
           </div>
         </div>
       </div>
-      <Bottom_dash/>
+      <Bottom_dash />
     </div>
   );
 };

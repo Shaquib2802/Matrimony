@@ -1,108 +1,160 @@
-import React, { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { SignUP } from "../../Service/SignUP";
 
 const Login = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectOption, setSelectOption] = useState("Matrimony profile for");
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    mobile_number: "",
+    gender: "",
+    age: "",
+    religion: "",
+    location: "",
+    address: "",
+    income: "",
+    profession: "",
+    height: "",
+    marital_status: "",
+  });
 
-  const options = [
-    "Myself",
-    "Daughter",
-    "Son",
-    "Sister",
-    "Brother",
-    "Relative",
-    "Friend",
-  ];
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
 
-  const toggleDropdown = (e) => {
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsOpen(!isOpen);
+    sign();
+    console.log(data);
+  };
+  const sign = async () => {
+    const data1 = await SignUP(data);
+    console.log(data1, "DataPost");
   };
 
-  const handleOptionClick = (option) => {
-    setSelectOption(option);
-    setIsOpen(false);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false); 
-  };
-  const navigate = useNavigate();
   return (
     <div className="w-[100%]">
-      <div
-        className=" md:w-[70%] md:ml-[80%] border bg-green-600 rounded-3xl mx-auto   "
-        onClick={handleClose}
-      >
+      <div className=" md:w-[70%] md:ml-[80%] border bg-green-600 rounded-3xl mx-auto  z-50 ">
         <div className="text-white text-center font-semibold text-lg md:text-2xl py-2 md:py-4">
           Create a Matrimony Profile
         </div>
         <div>
+          <div className="text-center text-white font-semibold md:font-normal text-lg md:text-xl py-2 md:py-4">
+            Find your perfect match
+          </div>
           <form
-            className="bg-white flex flex-col border border-gray-600 rounded-3xl pb-5 shadow-2xl"
+            onSubmit={handleSubmit}
+            className="bg-white grid grid-cols-2 pt-5 border border-gray-600 rounded-3xl pb-5 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="text-center font-semibold md:font-normal text-lg md:text-xl py-2 md:py-7">
-              Find your perfect match
-            </div>
-            <div className="relative w-[90%] md:w-[80%]  mx-auto ">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleDropdown(e);
-                }}
-                className="w-[100%] px-4 py-1 md:py-2 text-left bg-white border  border-black  rounded-md focus:outline-none"
-              >
-                <div className="flex  justify-between">
-                  <div className=" font-normal">{selectOption}</div>
-                  <div>
-                    <IoIosArrowDown className="mt-1.5" />
-                  </div>
-                </div>
-              </button>
-
-              {isOpen && (
-                <div className="absolute z-10 w-full mt-1 bg-white border border-black  rounded-b-lg shadow-lg">
-                  <div className="grid grid-cols-3 gap-2 p-2">
-                    {options.map((option, index) => (
-                      <button
-                        key={index}
-                        type="button"
-                        className="px-2 py-1 text-sm text-gray-700 font-semibold  rounded hover:text-orange-400 focus:outline-none"
-                        onClick={() => handleOptionClick(option)}
-                      >
-                        {option}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={data.email}
+              className="   w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Email"
+            />
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              value={data.password}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Password"
+            />
+            <input
+              type="number"
+              name="mobile_number"
+              onChange={handleChange}
+              value={data.mobile_number}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Number"
+            />
             <input
               type="text"
-              className=" mt-5 md:mt-10 w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-2 rounded-lg outline-none  "
-              placeholder=" Enter Name"
+              name="gender"
+              onChange={handleChange}
+              value={data.gender}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Gender"
             />
-            <div className="flex w-[90%] md:w-[80%] mx-auto mt-5 md:mt-10 justify-between">
-              <div className="w-[20%] flex border border-black rounded-lg justify-between items-center  p-1 md:p-1">
-                <div className="">+91</div>
-                <div>
-                  <IoIosArrowDown className="mt-1" />
-                </div>
-              </div>
-              <div className="w-[70%] ">
-                <input
-                  type="tel"
-                  placeholder=" Enter Number"
-                  className=" border border-black placeholder:text-black pl-3 p-1 md:p-2 rounded-lg outline-none w-[100%] "
-                />
-              </div>
-            </div>
+            <input
+              type="text"
+              name="age"
+              onChange={handleChange}
+              value={data.age}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Age"
+            />
+            <input
+              type="text"
+              name="religion"
+              onChange={handleChange}
+              value={data.religion}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter religion"
+            />
+            <input
+              type="text"
+              name="location"
+              onChange={handleChange}
+              value={data.location}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Location"
+            />
+
+            <input
+              type="text"
+              name="address"
+              onChange={handleChange}
+              value={data.address}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Address"
+            />
+
+            <input
+              type="text"
+              name="income"
+              onChange={handleChange}
+              value={data.income}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter Income"
+            />
+
+            <input
+              type="text"
+              name="profession"
+              onChange={handleChange}
+              value={data.profession}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter profession"
+            />
+
+            <input
+              type="text"
+              name="height"
+              onChange={handleChange}
+              value={data.height}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter height"
+            />
+
+            <input
+              type="text"
+              name="marital_status"
+              onChange={handleChange}
+              value={data.marital_status}
+              className=" mt-2  w-[90%] md:w-[80%] mx-auto border border-black placeholder:text-black pl-3 p-1 md:p-1 rounded-lg outline-none  "
+              placeholder=" Enter marital_status"
+            />
+
             <button
-            onClick={()=> navigate("/dash")}
               type="submit"
               className="text-white bg-orange-500 w-[90%] md:w-[80%] p-2 mx-auto rounded-lg mt-5 md:mt-10 font-semibold"
             >

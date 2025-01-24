@@ -2,7 +2,6 @@ import React from "react";
 import Pro_Head from "./Pro_Head";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
 
-
 const Verify = () => {
   return (
     <div className="w-[100%]">
@@ -84,15 +83,15 @@ const Verify = () => {
         </div>
         <div className="border border-gray-500 h-fit shadow-md rounded-3xl p-5">
           {" "}
-          <div className="text-2xl font-semibold"> Photo Verification
-          </div>
+          <div className="text-2xl font-semibold"> Photo Verification</div>
           <div className="mt-2 text-gray-800 font-medium">
             {" "}
-            We will need to verify your profile photo with a selfie.          </div>
+            We will need to verify your profile photo with a selfie.{" "}
+          </div>
           <div className="mt-2 text-gray-800 text-sm ">
             {" "}
-            To complete your photo verification, download our mobile application.
-
+            To complete your photo verification, download our mobile
+            application.
           </div>
           <div className="flex gap-x-2">
             <div className="border-2 mt-4 hover:bg-green-500 hover:border-green-500 cursor-pointer border-gray-300 w-[50%] text-center rounded-3xl p-1.5 font-medium">
@@ -101,7 +100,7 @@ const Verify = () => {
           </div>
         </div>
       </div>
-      <Bottom_dash/>
+      <Bottom_dash />
     </div>
   );
 };

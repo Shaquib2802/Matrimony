@@ -4,7 +4,6 @@ import { MdOutlineEdit } from "react-icons/md";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
 import { useNavigate } from "react-router-dom";
 
-
 const Edit = () => {
   return (
     <div className="w-[100%]">
@@ -221,7 +220,7 @@ const Edit = () => {
           </div>
         </div>
       </div>
-      <Bottom_dash/>
+      <Bottom_dash />
     </div>
   );
 };

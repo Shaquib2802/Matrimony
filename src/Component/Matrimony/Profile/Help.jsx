@@ -5,7 +5,7 @@ const Help = () => {
   return (
     <div>
       <Pro_Head />
-      <div className="mx-40 mt-14 ">
+      <div className="mx-40 mt-14">
         <div className="border-b pb-2 border-gray-200">
           FREQUENTLY ASKED QUESTIONS
         </div>
@@ -40,6 +40,7 @@ const Help = () => {
               <li>How to verify your mobile number?</li>
               <li>How to hide mobile number?</li>
               <li>Who viewed my mobile number?</li>
+
             </ul>
 
             <div className="text-[80%] mt-5 font-semibold border-b border-gray-300 border-dashed pb-2">

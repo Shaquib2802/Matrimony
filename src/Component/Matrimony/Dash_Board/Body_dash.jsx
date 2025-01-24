@@ -1,6 +1,5 @@
-import React from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Body_dash = () => {
@@ -161,7 +160,7 @@ const Body_dash = () => {
               Your profile is pending verification! Verify now to get better
               responses
             </div>
-            <div className="border border-orange-600  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-orange-600 text-white ">
+            <div onClick={()=> navigate("/ver")} className="border cursor-pointer border-orange-600  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-orange-600 text-white ">
               Verify Profile
             </div>
           </div>

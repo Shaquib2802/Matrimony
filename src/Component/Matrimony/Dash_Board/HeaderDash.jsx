@@ -12,7 +12,7 @@ const HeaderDash = () => {
   return (
     <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white">
       <div className="flex w-[90%] gap-x-8 h-[16vh] mx-auto">
-        {/* Logo */}
+    
         <div className="w-[20%]">
           <img
             className="p-6"
@@ -21,7 +21,7 @@ const HeaderDash = () => {
           />
         </div>
 
-        {/* Navigation */}
+     
         <div className="w-[90%] flex justify-between py-5">
           <div className="flex py-2.5">
             <HomeIcon className="text-green-600" />
@@ -75,7 +75,7 @@ const HeaderDash = () => {
           </div>
         </div>
 
-        {/* Profile Dropdown */}
+      
         <div>
         <div
           className={`hover:cursor-pointer flex mt-4 relative text-black hover:text-orange-500 ${
