@@ -34,7 +34,9 @@ const Login = () => {
   };
   const sign = async () => {
     const data1 = await SignUP(data);
+    
     console.log(data1, "DataPost");
+    localStorage.setItem("token",data1?.data?.token_key)
   };
 
   return (

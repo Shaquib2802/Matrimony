@@ -14,6 +14,8 @@ import Verify from "./Component/Matrimony/Profile/Verify";
 import Photo from "./Component/Matrimony/Dash_Board/Photo";
 import Preview from "./Component/Matrimony/Profile/Preview";
 import Matches from "./Component/Matrimony/NavBar/Matches";
+import Form_admin from "./Component/Matrimony/Admin/Form_admin";
+import Admin_dash from "./Component/Matrimony/Admin/Admin_dash";
 
 const App = () => {
   return (
@@ -38,6 +40,8 @@ const App = () => {
           <Route path="/pho" element={<Photo />} />
           <Route path="/prev" element={<Preview />} />
           <Route path="/mat" element={<Matches />} />
+          <Route path="/adm" element={<Form_admin/>} />
+          <Route path="/adm_dash" element={<Admin_dash/>} />
         </Routes>
       </BrowserRouter>
 

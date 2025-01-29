@@ -8,7 +8,7 @@ export const SignUP = async (req) => {
     const response = await axios.post(BaseUrl2 + ApiUrl.signUp, req, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Token ff0c6f62e77b4a3a7d0df35b3ec7f891580f37c2",
+        "Authorization": "Token ff0c6f62e77b4a3a7d0df35b3ec7f891580f37c2",
       },
     });
 

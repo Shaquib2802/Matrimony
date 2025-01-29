@@ -1,10 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Pro_Head from "./Pro_Head";
+import toast, { Toaster } from 'react-hot-toast';
+import {useFormik} from 'formik';
 import { MdOutlineEdit } from "react-icons/md";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
-import { useNavigate } from "react-router-dom";
+import { Get_Pref } from "../../Service/Get_pref";
+import { Pref_Update } from "../../Service/Update_pref";
 
 const Edit = () => {
+  const [open1, setOpen1] = useState(false);
+  const handleOpen = () => {
+    setOpen1(!open1);
+  };
+
+  const handleClose = () => {
+    setOpen1(false);
+  };
+  const [data, setData] = useState({});
+
+  const DataApi = async () => {
+    const response = await Get_Pref();
+    console.log("data(Item--):", response?.data);
+    setData(response?.data?.data || {}); 
+  };
+
+  useEffect(() => {
+    DataApi();
+  }, []);
+
+  const formik = useFormik({
+    initialValues: {
+        preference_id:data?.id ||"",
+        age: data?.age || '',
+        religion: data?.religion || '',
+        location: data?.location || '',
+        marital_status: data?.marital_status || '',
+        height: data?.height || '',
+        address: data?.address || '',
+        income: data?.income || '',
+        profession: data?.profession || ''
+    },
+    enableReinitialize: true,
+    onSubmit: async(values) => {
+
+
+     const data =   await Pref_Update(values);
+
+     console.log("dataPref",data?.data)
+
+     if(data.data.response_code === 200){
+
+        toast.success("successfully complete"); 
+        handleClose();
+       
+        DataApi();
+       
+     }
+    }
+});
+
   return (
     <div className="w-[100%]">
       <Pro_Head />
@@ -46,88 +100,187 @@ const Edit = () => {
             Turn on "Compulsory" to get matches exactly as per your preferences.
           </div>
           <div className="text-gray-600 mt-2 text-[75%]">*Patent pending</div>
-          <div className=" mt-10 flex items-center justify-start gap-x-5">
-            <div>
-              <img
-                src="//imgs.bharatmatrimony.com/bmimgs/desktop-images/pp-basic-preferences.svg"
-                alt=""
-              />
-            </div>
-            <div className="text-xl font-semibold">Basic Preferences</div>
-          </div>
-          <div className=" w-[91%] ml-[9%] flex flex-col">
-            <div className="flex border-b-2 p-2 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Bride's Age</div>
-                <div className="font-semibold">18 - 22 years</div>
-              </div>
+          <div className=" mt-10 flex items-center justify-between gap-x-5 ">
+            <div className="flex items-center gap-x-2">
               <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <img
+                  src="//imgs.bharatmatrimony.com/bmimgs/desktop-images/pp-basic-preferences.svg"
+                  alt=""
+                />
               </div>
+              <div className="text-xl font-semibold ">Basic Preferences</div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Height</div>
-                <div className="font-semibold">
-                  5 Ft 4 In- 5 Ft 3 In/137 Cms- 160 Cms
+            <div className="flex items-center gap-x-5">
+              <div onClick={handleOpen} className="text-xl font-semibold mt-2">
+                <MdOutlineEdit />
+              </div>
+              {open1 && (
+                <div  className="fixed inset-0 mt-10 flex items-center justify-center bg-black bg-opacity-50 z-40">
+                  <form onSubmit={formik.handleSubmit} className="  w-[50%] h-[90%]  bg-white  relative">
+                    <div
+                      className="absolute cursor-pointer right-2 top-0 font-semibold"
+                      onClick={handleClose}
+                    >
+                      x
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="text-2xl font-semibold text-black mt-5">
+                        Partner Basic Details
+                      </div>
+                      <div className="text-gray-700 font-semibold  text-sm">
+                        Brief outline of personal information
+                      </div>
+                      <div className=" w-[80%]   ">
+                        <div className="grid grid-cols-2 m-12 gap-3">
+                          <div>
+                            <label>Age:</label> <br />
+                            <input
+                              type="text"
+                              name="age"
+                              onChange={formik.handleChange}
+                              value={formik.values.age}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Religion:</label> <br />
+                            <input
+                              type="text"
+                              name="religion"
+                              onChange={formik.handleChange}
+                              value={formik.values.religion}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Location:</label> <br />
+                            <input
+                              type="text"
+                              name="location"
+                              onChange={formik.handleChange}
+                              value={formik.values.location}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Marital Status:</label> <br />
+                            <input
+                              type="text"
+                              name="marital_status"
+                              onChange={formik.handleChange}
+                              value={formik.values.marital_status}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Height:</label> <br />
+                            <input
+                              type="text"
+                              name="height"
+                              onChange={formik.handleChange}
+                              value={formik.values.height}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Address:</label> <br />
+                            <input
+                              name="address"
+                              onChange={formik.handleChange}
+                              value={formik.values.address}
+                              type="text"
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Income:</label> <br />
+                            <input
+                              type="text"
+                              name="income"
+                              onChange={formik.handleChange}
+                              value={formik.values.income}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                          <div>
+                            <label>Profession:</label> <br />
+                            <input
+                              type="text"
+                              name="profession"
+                              onChange={formik.handleChange}
+                              value={formik.values.profession}
+                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              placeholder="Enter Age"
+                            />
+                          </div>
+                        </div>
+                        <button type="submit" className="w-[77%] text-white bg-green-600 font-semibold  h-10 rounded-md text-center mx-auto mt-7 py-2 text-base">
+                          Save
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+              )}
+              
+            </div>
+          </div>
+
+          {/* Map over the object keys and display data */}
+          <div className="w-[91%] ml-[9%] flex flex-col">
+            <div className="border-b-2 p-2">
+              <div className="flex flex-col">
+                <div className="text-lg">Age</div>
+                <div className="font-semibold">{data?.age}</div>
               </div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
+            <div className="border-b-2 p-2 mt-3">
+              <div className="flex flex-col">
+                <div className="text-lg">Religion</div>
+                <div className="font-semibold">{data?.religion}</div>
+              </div>
+            </div>
+            <div className="border-b-2 p-2 mt-3">
+              <div className="flex flex-col">
+                <div className="text-lg">Location</div>
+                <div className="font-semibold">{data?.location}</div>
+              </div>
+            </div>
+            <div className="border-b-2 p-2 mt-3">
               <div className="flex flex-col">
                 <div className="text-lg">Marital Status</div>
-                <div className="font-semibold">Never Married</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <div className="font-semibold">{data?.marital_status}</div>
               </div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
+            <div className="border-b-2 p-2 mt-3">
               <div className="flex flex-col">
-                <div className="text-lg">Mother Tongue</div>
-                <div className="font-semibold">Hindi</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <div className="text-lg">Address</div>
+                <div className="font-semibold">{data?.address}</div>
               </div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
+            <div className="border-b-2 p-2 mt-3">
               <div className="flex flex-col">
-                <div className="text-lg">Physical Status</div>
-                <div className="font-semibold">Normal</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <div className="text-lg">Height</div>
+                <div className="font-semibold">{data?.height}</div>
               </div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
+            <div className="border-b-2 p-2 mt-3">
               <div className="flex flex-col">
-                <div className="text-lg">Eating Habits</div>
-                <div className="font-semibold">Doesn't matter</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <div className="text-lg">Income</div>
+                <div className="font-semibold">{data?.income}</div>
               </div>
             </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
+            <div className="border-b-2 p-2 mt-3">
               <div className="flex flex-col">
-                <div className="text-lg">Drinking Habits</div>
-                <div className="font-semibold">Doesn't matter</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
-              </div>
-            </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Smoking Habits</div>
-                <div className="font-semibold">Doesn't matter</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
+                <div className="text-lg">Profession</div>
+                <div className="font-semibold">{data?.profession}</div>
               </div>
             </div>
           </div>
@@ -169,58 +322,10 @@ const Edit = () => {
               </div>
             </div>
           </div>
-          <div className=" mt-10 flex items-center justify-start gap-x-5">
-            <div>
-              <img
-                src="https://imgs.bharatmatrimony.com/bmimgs/desktop-images/pp-professional-preferences.svg"
-                alt="NAN"
-              />
-            </div>
-            <div className="text-xl font-semibold">
-              Professional Preferences
-            </div>
-          </div>
-          <div className=" w-[91%] ml-[9%] flex flex-col">
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Education</div>
-                <div className="font-semibold">Any</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
-              </div>
-            </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Employed In</div>
-                <div className="font-semibold">Any</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
-              </div>
-            </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Occupation</div>
-                <div className="font-semibold">Any</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
-              </div>
-            </div>
-            <div className="flex border-b-2 p-2 mt-3 justify-between items-center">
-              <div className="flex flex-col">
-                <div className="text-lg">Annual Income</div>
-                <div className="font-semibold">Any</div>
-              </div>
-              <div>
-                <MdOutlineEdit className="text-2xl text-gray-600" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <Bottom_dash />
+      <Toaster/>
     </div>
   );
 };

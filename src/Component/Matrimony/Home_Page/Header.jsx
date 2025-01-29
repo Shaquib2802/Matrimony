@@ -4,14 +4,20 @@ import { IoIosArrowDown } from "react-icons/io";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Login_Post } from "../../Service/GetOTP";
+import { Ver_Post } from "../../Service/VerifyOTP";
+import { useNavigate } from "react-router-dom";
+import { RiAdminFill } from "react-icons/ri";
 
 const Header = () => {
+  const Navigate = useNavigate();
+
+  const [open1, setOpen1] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [data, setData] = useState({ mobile: "" });
+  const [data, setData] = useState({ email: "", otp: "" });
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -28,7 +34,30 @@ const Header = () => {
 
   const Otp = async () => {
     const data1 = await Login_Post(data);
+
     console.log(data1, "Data11");
+    if (data1.status === 200) {
+      setOpen1(true);
+    } else {
+      setOpen1(false);
+    }
+  };
+  const req = {
+    email: data?.email,
+    otp: data?.otp,
+  };
+  const handleverifyOTP = async (e) => {
+    e.preventDefault();
+
+    const otpdata = await Ver_Post(req);
+    console.log(">>>>>", otpdata);
+    if (otpdata?.status === 200) {
+      Navigate("/dash");
+    } else {
+      alert("Invalid Password");
+    }
+
+    console.log(otpdata);
   };
   return (
     <div className="w-[100%] overflow-hidden shadow-lg">
@@ -89,40 +118,49 @@ const Header = () => {
                     />
                   </div>
                   <div className="text-center mt-7 font-semibold text-lg w-[85%] mx-auto">
-                    Enter your registered mobile number and we will send you an
-                    OTP for login.
+                    Enter your registered Email and we will send you an OTP for
+                    login.
                   </div>
                   <div className="w-[85%] my-5 border border-black rounded-md flex mx-auto">
-                    <div className="w-[25%] bg-gray-100 rounded-md flex items-center gap-x-1.5 p-1 justify-center">
-                      <div className="border w-[20%] h-[20%]">
-                        <img
-                          className="w-[90%] -mt-0.5"
-                          src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/country-flags/INDIA.svg"
-                          alt="India Flag"
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">+91</div>
-                      <div>
-                        <KeyboardArrowDownIcon />
-                      </div>
-                    </div>
                     <div className="w-[75%] p-2">
-                      <input
-                        type="number"
-                        name="mobile"
-                        onChange={handleChange}
-                        value={data.mobile}
-                        placeholder="Enter mobile number"
-                        className="outline-none placeholder:outline-none bg-white border-none ml-1 w-full"
-                      />
+                      {!open1 ? (
+                        <input
+                          type="email"
+                          name="email"
+                          onChange={handleChange}
+                          value={data.email}
+                          placeholder="Enter Email"
+                          className="outline-none placeholder:outline-none bg-white border-none ml-1 w-full"
+                        />
+                      ) : (
+                        <input
+                          type="number"
+                          name="otp"
+                          onChange={handleChange}
+                          value={data.otp}
+                          placeholder="Enter OTP"
+                          className="outline-none placeholder:outline-none bg-white border-none ml-1 w-full"
+                        />
+                      )}
                     </div>
                   </div>
-                  <button
-                    type="submit"
-                    className="p-1 border bg-blue-700 font-semibold text-white hover:bg-blue-800 rounded-2xl w-[85%] mx-auto"
-                  >
-                    Generate OTP
-                  </button>
+
+                  {!open1 ? (
+                    <button
+                      type="submit"
+                      className="p-1 border bg-blue-700 font-semibold text-white hover:bg-blue-800 rounded-2xl w-[85%] mx-auto"
+                    >
+                      Generate OTP{" "}
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={handleverifyOTP}
+                      className="p-1 border bg-blue-700 font-semibold text-white hover:bg-blue-800 rounded-2xl w-[85%] mx-auto"
+                    >
+                      Verify OTP{" "}
+                    </button>
+                  )}
                   <div className="font-semibold mx-auto text-sm my-4 text-center text-orange-400">
                     Login with password
                   </div>
@@ -134,13 +172,19 @@ const Header = () => {
               </div>
             </div>
           )}
-          <div className="flex w-[30%] justify-center gap-x-1.5">
+          <div className="flex w-[30%] justify-center  gap-x-3">
             <div>
               <QuestionMarkIcon className="border-2 border-gray-400 text-gray-400 rounded-3xl !text-2xl" />
             </div>
             <div className="text-sm mt-1">Help</div>
             <div>
               <IoIosArrowDown className="mt-2" />
+            </div>
+            <div className="flex flex-col cursor-pointer justify-center items-center"  onClick={()=>Navigate("/adm")}>
+              <div>
+                <RiAdminFill className="text-xl"/>
+              </div>
+              <div className="font-semibold text-sm text-gray-700">Admin</div>
             </div>
           </div>
         </div>
