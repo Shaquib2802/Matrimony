@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Pro_Head from "./Pro_Head";
-import toast, { Toaster } from 'react-hot-toast';
-import {useFormik} from 'formik';
+import toast, { Toaster } from "react-hot-toast";
+import { useFormik } from "formik";
 import { MdOutlineEdit } from "react-icons/md";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
 import { Get_Pref } from "../../Service/Get_pref";
@@ -21,7 +21,7 @@ const Edit = () => {
   const DataApi = async () => {
     const response = await Get_Pref();
     console.log("data(Item--):", response?.data);
-    setData(response?.data?.data || {}); 
+    setData(response?.data?.data || {});
   };
 
   useEffect(() => {
@@ -30,34 +30,43 @@ const Edit = () => {
 
   const formik = useFormik({
     initialValues: {
-        preference_id:data?.id ||"",
-        age: data?.age || '',
-        religion: data?.religion || '',
-        location: data?.location || '',
-        marital_status: data?.marital_status || '',
-        height: data?.height || '',
-        address: data?.address || '',
-        income: data?.income || '',
-        profession: data?.profession || ''
+      preference_id: data?.id || "",
+      age: data?.age || "",
+      religion: data?.religion || "",
+      location: data?.location || "",
+      marital_status: data?.marital_status || "",
+      height: data?.height || "",
+      address: data?.address || "",
+      income: data?.income || "",
+      create_profile_for: data?.create_profile_for || "",
+      user_name: data?.user_name || "",
+      gender: data?.gender || "",
+      mobile: data?.mobile_number || "",
+      mother_tounque: data?.mother_tounque || "",
+      profession: data?.profession || "",
+      skin_col: data?.skin_colour || "",
+      diet: data?.diet || "",
     },
-    enableReinitialize: true,
-    onSubmit: async(values) => {
-
-
-     const data =   await Pref_Update(values);
-
-     console.log("dataPref",data?.data)
-
-     if(data.data.response_code === 200){
-
-        toast.success("successfully complete"); 
-        handleClose();
-       
-        DataApi();
-       
-     }
-    }
-});
+    enableReinitialize: true, 
+    onSubmit: async (values) => {
+      try {
+        const response = await Pref_Update(values); 
+        console.log("Updated Data:", response?.data); 
+  
+        if (response?.data?.response_code === 200) {
+          toast.success("Successfully updated!");
+          handleClose(); 
+          await DataApi(); 
+        } else {
+          toast.error("Update failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error updating preferences:", error);
+        toast.error("An error occurred while updating.");
+      }
+    },
+  });
+  
 
   return (
     <div className="w-[100%]">
@@ -115,8 +124,11 @@ const Edit = () => {
                 <MdOutlineEdit />
               </div>
               {open1 && (
-                <div  className="fixed inset-0 mt-10 flex items-center justify-center bg-black bg-opacity-50 z-40">
-                  <form onSubmit={formik.handleSubmit} className="  w-[50%] h-[90%]  bg-white  relative">
+                <div className="fixed inset-0 mt-10 flex items-center justify-center bg-black bg-opacity-50 z-40">
+                  <form
+                    onSubmit={formik.handleSubmit}
+                    className="  w-[50%] h-[90%]  bg-white  relative"
+                  >
                     <div
                       className="absolute cursor-pointer right-2 top-0 font-semibold"
                       onClick={handleClose}
@@ -139,7 +151,7 @@ const Edit = () => {
                               name="age"
                               onChange={formik.handleChange}
                               value={formik.values.age}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2 w-[90%] "
                               placeholder="Enter Age"
                             />
                           </div>
@@ -150,7 +162,7 @@ const Edit = () => {
                               name="religion"
                               onChange={formik.handleChange}
                               value={formik.values.religion}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%] "
                               placeholder="Enter Age"
                             />
                           </div>
@@ -161,7 +173,7 @@ const Edit = () => {
                               name="location"
                               onChange={formik.handleChange}
                               value={formik.values.location}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%] "
                               placeholder="Enter Age"
                             />
                           </div>
@@ -172,7 +184,7 @@ const Edit = () => {
                               name="marital_status"
                               onChange={formik.handleChange}
                               value={formik.values.marital_status}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%]"
                               placeholder="Enter Age"
                             />
                           </div>
@@ -183,7 +195,7 @@ const Edit = () => {
                               name="height"
                               onChange={formik.handleChange}
                               value={formik.values.height}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%]"
                               placeholder="Enter Age"
                             />
                           </div>
@@ -194,7 +206,7 @@ const Edit = () => {
                               onChange={formik.handleChange}
                               value={formik.values.address}
                               type="text"
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%]"
                               placeholder="Enter Age"
                             />
                           </div>
@@ -205,7 +217,7 @@ const Edit = () => {
                               name="income"
                               onChange={formik.handleChange}
                               value={formik.values.income}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%]"
                               placeholder="Enter Age"
                             />
                           </div>
@@ -216,12 +228,15 @@ const Edit = () => {
                               name="profession"
                               onChange={formik.handleChange}
                               value={formik.values.profession}
-                              className="outline-none border border-black rounded-md placeholder:pl-2 "
+                              className="outline-none border border-black rounded-md placeholder:pl-2  w-[90%]"
                               placeholder="Enter Age"
                             />
                           </div>
                         </div>
-                        <button type="submit" className="w-[77%] text-white bg-green-600 font-semibold  h-10 rounded-md text-center mx-auto mt-7 py-2 text-base">
+                        <button
+                          type="submit"
+                          className="w-[77%] text-white bg-green-600 font-semibold  h-10 rounded-md text-center mx-auto mt-7 py-2 text-base"
+                        >
                           Save
                         </button>
                       </div>
@@ -229,11 +244,9 @@ const Edit = () => {
                   </form>
                 </div>
               )}
-              
             </div>
           </div>
 
-          {/* Map over the object keys and display data */}
           <div className="w-[91%] ml-[9%] flex flex-col">
             <div className="border-b-2 p-2">
               <div className="flex flex-col">
@@ -325,7 +338,7 @@ const Edit = () => {
         </div>
       </div>
       <Bottom_dash />
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

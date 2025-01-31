@@ -1,8 +1,29 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Get_Matched_Pref } from "../../Service/Get_pref";
 
 const Body_dash = () => {
+  const [data, setData] = useState([]);
+
+  const DataApi = async () => {
+    try {
+      const response = await Get_Matched_Pref();
+      console.log("API Response:", response);
+      if (Array.isArray(response?.data)) {
+        setData(response?.data);
+      } else {
+        console.error("Data is not an array", response?.data);
+        setData([]); 
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    DataApi();
+  }, []);
+
   const navigate = useNavigate();
   return (
     <div className="w-[100%] ">
@@ -44,7 +65,7 @@ const Body_dash = () => {
             Become a paid member now
           </div>
           <div
-            onClick={()=> navigate("/upg")}
+            onClick={() => navigate("/upg")}
             className="border cursor-pointer p-1 border-orange-600 mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-orange-500 mx-auto"
           >
             Upgrade
@@ -160,7 +181,10 @@ const Body_dash = () => {
               Your profile is pending verification! Verify now to get better
               responses
             </div>
-            <div onClick={()=> navigate("/ver")} className="border cursor-pointer border-orange-600  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-orange-600 text-white ">
+            <div
+              onClick={() => navigate("/ver")}
+              className="border cursor-pointer border-orange-600  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-orange-600 text-white "
+            >
               Verify Profile
             </div>
           </div>
@@ -168,7 +192,10 @@ const Body_dash = () => {
             <div className="text-white text-xs left-36 absolute top-10 font-medium">
               Get a flat ₹3700 off on 3 month Gold
             </div>
-            <div onClick={()=>navigate("/upg")} className="border cursor-pointer absolute right-3 top-6  border-gray-500 rounded-2xl  text-center  text-sm w-32 h-8 pt-1 bg-[#ffc500]">
+            <div
+              onClick={() => navigate("/upg")}
+              className="border cursor-pointer absolute right-3 top-6  border-gray-500 rounded-2xl  text-center  text-sm w-32 h-8 pt-1 bg-[#ffc500]"
+            >
               Upgrade Now
             </div>
             <div className="text-[50%] text-gray-200 font-medium absolute top-14 right-5">
@@ -194,59 +221,67 @@ const Body_dash = () => {
               Members who match your partner preferences
             </div>
             <div className="grid grid-cols-4 mt-3">
-              <div className=" flex flex-col">
-                <div>
-                  <img
-                    className="w-[90%] rounded-xl"
-                    src="https://h-imgs.matrimonycdn.com/photos/2024/12/20/20/H14120749_NgmDT_16750_TL_MH.jpg"
-                    alt=""
-                  />
+            {Array.isArray(data) && data.map((item, index) => (
+              <div key={index} >
+                <div className=" flex flex-col">
+                  <div>
+                    <img
+                      className="w-[90%] border-2 rounded-xl"
+                      src="https://h-imgs.matrimonycdn.com/photos/2024/12/20/20/H14120749_NgmDT_16750_TL_MH.jp"
+                      alt=""
+                    />
+                  </div>
+                  <div className="text-sm font-semibold mt-1">
+                    {item.user_name}
+                  </div>
+                  <div className="text-gray-700 font-semibold text-xs">
+                    {item.age} Yrs, {item.height}"
+                    
+                  </div>
                 </div>
-                <div className="text-sm font-semibold mt-1">Shanayasheikh</div>
-                <div className="text-gray-700 font-semibold text-xs">
-                  22 Yrs, 5'2"
+             {/*    <div className=" flex flex-col">
+                  <div>
+                    <img
+                      className="w-[90%] rounded-xl"
+                      src="https://h-imgs.matrimonycdn.com/photos/2024/06/23/21/H13492567_rQzR_361_TL_MH.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div className="text-sm font-semibold mt-1">Zeenatul</div>
+                  <div className="text-gray-700 font-semibold text-xs">
+                    22 Yrs, 5'2"
+                  </div>
                 </div>
+                <div className=" flex flex-col">
+                  <div>
+                    <img
+                      className="w-[90%] rounded-xl"
+                      src="https://hamariweb.com/profiles/images/profile/6254-954.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div className="text-sm font-semibold mt-1">Aayna</div>
+                  <div className="text-gray-700 font-semibold text-xs">
+                    18 Yrs, 5'2"
+                  </div>
+                </div>
+                <div className=" flex flex-col">
+                  <div>
+                    <img
+                      className="w-[90%] rounded-xl"
+                      src="https://h-imgs.matrimonycdn.com/photos/2024/09/24/11/H13795864_vhfjJ_69027_TL_MH.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div className="text-sm font-semibold mt-1">
+                    Shanayasheikh
+                  </div>
+                  <div className="text-gray-700 font-semibold text-xs">
+                    22 Yrs, 5'2"
+                  </div>
+                </div> */}
               </div>
-              <div className=" flex flex-col">
-                <div>
-                  <img
-                    className="w-[90%] rounded-xl"
-                    src="https://h-imgs.matrimonycdn.com/photos/2024/06/23/21/H13492567_rQzR_361_TL_MH.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="text-sm font-semibold mt-1">Zeenatul</div>
-                <div className="text-gray-700 font-semibold text-xs">
-                  22 Yrs, 5'2"
-                </div>
-              </div>
-              <div className=" flex flex-col">
-                <div>
-                  <img
-                    className="w-[90%] rounded-xl"
-                    src="https://hamariweb.com/profiles/images/profile/6254-954.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="text-sm font-semibold mt-1">Aayna</div>
-                <div className="text-gray-700 font-semibold text-xs">
-                  18 Yrs, 5'2"
-                </div>
-              </div>
-              <div className=" flex flex-col">
-                <div>
-                  <img
-                    className="w-[90%] rounded-xl"
-                    src="https://h-imgs.matrimonycdn.com/photos/2024/09/24/11/H13795864_vhfjJ_69027_TL_MH.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="text-sm font-semibold mt-1">Shanayasheikh</div>
-                <div className="text-gray-700 font-semibold text-xs">
-                  22 Yrs, 5'2"
-                </div>
-              </div>
-            </div>
+            ))}</div>
           </div>
           <div>
             {" "}
@@ -320,7 +355,7 @@ const Body_dash = () => {
               </div>
             </div>
           </div>
-          {/* Graphics */}{" "}
+   
           <div className=" mt-16">
             <div className="text-xl font-semibold">Complete Your Profile</div>
             <div className="flex gap-2 mt-2">
@@ -353,7 +388,6 @@ const Body_dash = () => {
               </div>
             </div>
           </div>
-          {/* Card */}
           <div className="flex mt-8  justify-between">
             <div className="text-xl font-semibold">New Matches (18)</div>
 

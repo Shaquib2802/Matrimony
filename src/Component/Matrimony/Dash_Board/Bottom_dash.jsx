@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Bottom_dash = () => {
+  const navigate = useNavigate()
   return (
     <div className="w-[100%] bg-white ">
       <div className="mx-24 border-t-2 m-10">
@@ -38,8 +40,8 @@ const Bottom_dash = () => {
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
               <div className="hover:text-orange-300">24x7 Live help</div>
               <div className="hover:text-orange-300">Contact us</div>
-              <div className="hover:text-orange-300">Feedback</div>
-              <div className="hover:text-orange-300">FAQs</div>
+              <div className="hover:text-orange-300 cursor-pointer" onClick={()=> navigate("/blog")}>Blog</div>
+              <div className="hover:text-orange-300 cursor-pointer" onClick={()=> navigate("/fq")}>FAQs</div>
             </div>
             <div className=" font-medium mt-5 text-lg">Our Other Services</div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">

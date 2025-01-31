@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import { IoIosArrowDown } from "react-icons/io";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import React, { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import { Login_Post } from "../../Service/GetOTP";
 import { Ver_Post } from "../../Service/VerifyOTP";
-import { useNavigate } from "react-router-dom";
-import { RiAdminFill } from "react-icons/ri";
 
 const Header = () => {
   const Navigate = useNavigate();
@@ -130,7 +128,7 @@ const Header = () => {
                           onChange={handleChange}
                           value={data.email}
                           placeholder="Enter Email"
-                          className="outline-none placeholder:outline-none bg-white border-none ml-1 w-full"
+                          className="outline-none  placeholder:outline-none bg-white border-none ml-1"
                         />
                       ) : (
                         <input
@@ -180,12 +178,7 @@ const Header = () => {
             <div>
               <IoIosArrowDown className="mt-2" />
             </div>
-            <div className="flex flex-col cursor-pointer justify-center items-center"  onClick={()=>Navigate("/adm")}>
-              <div>
-                <RiAdminFill className="text-xl"/>
-              </div>
-              <div className="font-semibold text-sm text-gray-700">Admin</div>
-            </div>
+          
           </div>
         </div>
       </div>

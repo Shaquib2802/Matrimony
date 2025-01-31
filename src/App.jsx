@@ -16,6 +16,8 @@ import Preview from "./Component/Matrimony/Profile/Preview";
 import Matches from "./Component/Matrimony/NavBar/Matches";
 import Form_admin from "./Component/Matrimony/Admin/Form_admin";
 import Admin_dash from "./Component/Matrimony/Admin/Admin_dash";
+import F_andQ from "./Component/Matrimony/F&Q/F_andQ";
+import Blog from "./Component/Matrimony/F&Q/Blog";
 
 const App = () => {
   return (
@@ -41,7 +43,8 @@ const App = () => {
           <Route path="/prev" element={<Preview />} />
           <Route path="/mat" element={<Matches />} />
           <Route path="/adm" element={<Form_admin/>} />
-          <Route path="/adm_dash" element={<Admin_dash/>} />
+          <Route path="/fq" element={<F_andQ/>} />
+          <Route path="/blog" element={<Blog/>} />
         </Routes>
       </BrowserRouter>
 
