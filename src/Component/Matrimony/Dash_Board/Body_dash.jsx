@@ -8,7 +8,7 @@ const Body_dash = () => {
 
   const DataApi = async () => {
     try {
-      const response = await Get_Matched_Pref();
+      const response = await Get_Matched_Pref(data);
       console.log("API Response:", response);
       if (Array.isArray(response?.data)) {
         setData(response?.data);
@@ -204,7 +204,7 @@ const Body_dash = () => {
           </div>
           <div>
             {" "}
-            {/* Card */}
+         
             <div className="flex mt-8  justify-between">
               <div className="text-xl font-semibold">All Matches (271)</div>
 
@@ -220,21 +220,21 @@ const Body_dash = () => {
             <div className="text-gray-800 mt-2 text-sm">
               Members who match your partner preferences
             </div>
-            <div className="grid grid-cols-4 mt-3">
+            <div className="grid grid-cols-4 mt-3 gap-x-2">
             {Array.isArray(data) && data.map((item, index) => (
-              <div key={index} >
-                <div className=" flex flex-col">
+              <div key={index}  >
+                <div className=" flex flex-col border cursor-pointer  " onClick={()=> navigate("/det",{ state: { data: item  }})}>
                   <div>
-                    <img
-                      className="w-[90%] border-2 rounded-xl"
-                      src="https://h-imgs.matrimonycdn.com/photos/2024/12/20/20/H14120749_NgmDT_16750_TL_MH.jp"
-                      alt=""
+                    <img 
+                      className="w-[90%] border-2 mx-auto rounded-xl"
+                      src={`http://192.168.1.188:8098/${item?.profile_picture}`} alt="Profile" 
+          
                     />
                   </div>
-                  <div className="text-sm font-semibold mt-1">
+                  <div className="text-sm ml-3 font-semibold mt-1">
                     {item.user_name}
                   </div>
-                  <div className="text-gray-700 font-semibold text-xs">
+                  <div className="text-gray-700 ml-3 font-semibold text-xs">
                     {item.age} Yrs, {item.height}"
                     
                   </div>
@@ -285,7 +285,7 @@ const Body_dash = () => {
           </div>
           <div>
             {" "}
-            {/* Card */}
+      
             <div className="flex mt-8  justify-between">
               <div className="text-xl font-semibold">
                 Your Daily Recommendations for 5th Jan

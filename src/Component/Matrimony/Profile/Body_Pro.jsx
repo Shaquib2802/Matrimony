@@ -360,16 +360,19 @@ const Body_Pro = () => {
             </div>
             <div className="w-[23%] border bg-gray-100 ">
               <div className="flex flex-col ">
+                
                 <div>
-                 <img src="{data?.profile_picture}" alt="" />
+                <img className="w-28 mx-auto h-32  object-cover" src={`http://192.168.1.188:8098/${data?.profile_picture}`} alt="Profile" />
+
                 </div>
               </div>
-              <div
+             {/*  <div
                 oClick={() => navigate("/pho")}
                 className="text-center cursor-pointer text-sm p-1 text-blue-500"
               >
                 Add / Edit Photos
-              </div>
+              </div> */}
+              
             </div>
             <div className="flex  mt-4">
               <div className="flex flex-col w-[50%] gap-y-4">

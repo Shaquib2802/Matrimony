@@ -50,9 +50,12 @@ const Header = () => {
     const otpdata = await Ver_Post(req);
     console.log(">>>>>", otpdata);
     if (otpdata?.status === 200) {
+      console.log("MY_OTPDATA", otpdata);
+      localStorage.setItem("token", otpdata?.data?.token_key);
       Navigate("/dash");
     } else {
       alert("Invalid Password");
+      Navigate("/dash");
     }
 
     console.log(otpdata);
@@ -178,7 +181,6 @@ const Header = () => {
             <div>
               <IoIosArrowDown className="mt-2" />
             </div>
-          
           </div>
         </div>
       </div>

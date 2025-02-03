@@ -23,9 +23,9 @@ const HeaderDash = () => {
 
      
         <div className="w-[90%] flex justify-between py-5">
-          <div className="flex py-2.5">
-            <HomeIcon className="text-green-600" />
-            <div className="mt-1.5 text-sm font-semibold text-green-600">
+          <div className="flex py-2.5 cursor-pointer" onClick={()=>navigate("/dash")}>
+            <HomeIcon className="text-gray-400 mt-0.5" />
+            <div className="mt-1.5 text-sm font-semibold text-gray-600">
               Home
             </div>
           </div>
@@ -50,7 +50,7 @@ const HeaderDash = () => {
             />
             <div className="mt-0.5 text-sm text-black">Messages</div>
           </div>
-          <div className="flex py-3 gap-x-0.5">
+          <div className="flex py-3 gap-x-0.5 cursor-pointer" onClick={()=>navigate("/search")}>
             <img
               className="mt-0.5"
               src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/icon-generic-search.svg"

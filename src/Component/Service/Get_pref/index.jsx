@@ -6,6 +6,29 @@ export const Get_Pref = async () => {
   console.log("this is service data1");
   try {
     const response = await axios.get(BaseUrl1 + ApiUrl.pref, {
+      /* params:{
+
+      }, */
+      headers: {
+        "Content-Type": "application/json",
+        /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+    });
+
+    return response || [];
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const Get_Search = async (data) => {
+  console.log("this isu8yyiriutfe9y9y49 service data1", data);
+  try {
+    const response = await axios.get(BaseUrl1 + ApiUrl.search, {
+      params: data,
+      /* params:{
+
+      }, */
       headers: {
         "Content-Type": "application/json",
         /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
@@ -41,7 +64,7 @@ export const Get_Edit_Prof = async () => {
   try {
     const response = await axios.get(BaseUrl1 + ApiUrl.edit, {
       headers: {
-        "Content-Type": "application/json",
+        /*  "Content-Type": "application/json", */
         /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
         Authorization: `Token ${localStorage.getItem("token")}`,
       },

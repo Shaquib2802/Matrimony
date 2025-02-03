@@ -6,5 +6,6 @@ export const ApiUrl = {
   matched: "/get-matched-preferences/",
   edit: "/updateprofile/",
   f_q: "/faq-api/",
-  blog: "/get-blog/"
+  blog: "/get-blog/",
+  search: "/search-profiles/"
 };
