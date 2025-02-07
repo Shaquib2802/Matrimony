@@ -1,10 +1,11 @@
-import React from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import HomeIcon from "@mui/icons-material/Home";
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Pro_Head = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="w-[100%]  top-0 sticky z-50 bg-white border-b-2 border-green-600
@@ -23,7 +24,7 @@ const Pro_Head = () => {
             <div>
               <HomeIcon className="text-green-600" />
             </div>
-            <div className="mt-1.5 text-sm font-semibold text-green-600">
+            <div onClick={()=> navigate("/dash")} className="mt-1.5 cursor-pointer text-sm font-semibold text-green-600">
               Home
             </div>
           </div>

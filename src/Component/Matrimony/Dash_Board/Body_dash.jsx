@@ -3,20 +3,16 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import { useNavigate } from "react-router-dom";
 import { Get_Matched_Pref } from "../../Service/Get_pref";
 
 const Body_dash = () => {
   const [data, setData] = useState([]);
-
   const navigate = useNavigate();
-
   const DataApi = async () => {
     try {
       const response = await Get_Matched_Pref();
       console.log("API Response:", response);
-
       if (Array.isArray(response?.data)) {
         setData(response.data);
       } else {
@@ -28,12 +24,9 @@ const Body_dash = () => {
     }
   };
 
- 
-
   useEffect(() => {
     DataApi();
-  }, []); 
-
+  }, []);
 
   var settings = {
     dots: true,
@@ -69,7 +62,7 @@ const Body_dash = () => {
       },
     ],
   };
- 
+
   return (
     <div className="w-[100%] ">
       <div className="border-t-2 border-gray-300 my-14 w-[55%] mx-auto relative z-20 ">
@@ -271,7 +264,7 @@ const Body_dash = () => {
                     <div key={index}>
                       <div
                         className=" flex flex-col border cursor-pointer  "
-                        onClick={() =>{
+                        onClick={() => {
                           navigate("/det", { state: { data: item } });
                         }}
                       >
