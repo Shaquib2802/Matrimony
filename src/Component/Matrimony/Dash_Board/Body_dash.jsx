@@ -1,30 +1,75 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { useNavigate } from "react-router-dom";
 import { Get_Matched_Pref } from "../../Service/Get_pref";
 
 const Body_dash = () => {
   const [data, setData] = useState([]);
 
+  const navigate = useNavigate();
+
   const DataApi = async () => {
     try {
-      const response = await Get_Matched_Pref(data);
+      const response = await Get_Matched_Pref();
       console.log("API Response:", response);
+
       if (Array.isArray(response?.data)) {
-        setData(response?.data);
+        setData(response.data);
       } else {
         console.error("Data is not an array", response?.data);
-        setData([]); 
+        setData([]);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+
+ 
+
   useEffect(() => {
     DataApi();
-  }, []);
+  }, []); 
 
-  const navigate = useNavigate();
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+ 
   return (
     <div className="w-[100%] ">
       <div className="border-t-2 border-gray-300 my-14 w-[55%] mx-auto relative z-20 ">
@@ -204,7 +249,6 @@ const Body_dash = () => {
           </div>
           <div>
             {" "}
-         
             <div className="flex mt-8  justify-between">
               <div className="text-xl font-semibold">All Matches (271)</div>
 
@@ -220,26 +264,32 @@ const Body_dash = () => {
             <div className="text-gray-800 mt-2 text-sm">
               Members who match your partner preferences
             </div>
-            <div className="grid grid-cols-4 mt-3 gap-x-2">
-            {Array.isArray(data) && data.map((item, index) => (
-              <div key={index}  >
-                <div className=" flex flex-col border cursor-pointer  " onClick={()=> navigate("/det",{ state: { data: item  }})}>
-                  <div>
-                    <img 
-                      className="w-[90%] border-2 mx-auto rounded-xl"
-                      src={`http://192.168.1.188:8098/${item?.profile_picture}`} alt="Profile" 
-          
-                    />
-                  </div>
-                  <div className="text-sm ml-3 font-semibold mt-1">
-                    {item.user_name}
-                  </div>
-                  <div className="text-gray-700 ml-3 font-semibold text-xs">
-                    {item.age} Yrs, {item.height}"
-                    
-                  </div>
-                </div>
-             {/*    <div className=" flex flex-col">
+            <div className="slider-container gap-x-2">
+              <Slider {...settings}>
+                {Array.isArray(data) &&
+                  data.map((item, index) => (
+                    <div key={index}>
+                      <div
+                        className=" flex flex-col border cursor-pointer  "
+                        onClick={() =>{
+                          navigate("/det", { state: { data: item } });
+                        }}
+                      >
+                        <div>
+                          <img
+                            className="w-[90%] border-2 mx-auto rounded-xl"
+                            src={`http://192.168.1.188:8098/${item?.profile_picture}`}
+                            alt="Profile"
+                          />
+                        </div>
+                        <div className="text-sm ml-3 font-semibold mt-1">
+                          {item.user_name}
+                        </div>
+                        <div className="text-gray-700 ml-3 font-semibold text-xs">
+                          {item.age} Yrs, {item.height}"
+                        </div>
+                      </div>
+                      {/*    <div className=" flex flex-col">
                   <div>
                     <img
                       className="w-[90%] rounded-xl"
@@ -280,12 +330,13 @@ const Body_dash = () => {
                     22 Yrs, 5'2"
                   </div>
                 </div> */}
-              </div>
-            ))}</div>
+                    </div>
+                  ))}
+              </Slider>
+            </div>
           </div>
           <div>
             {" "}
-      
             <div className="flex mt-8  justify-between">
               <div className="text-xl font-semibold">
                 Your Daily Recommendations for 5th Jan
@@ -355,7 +406,7 @@ const Body_dash = () => {
               </div>
             </div>
           </div>
-   
+
           <div className=" mt-16">
             <div className="text-xl font-semibold">Complete Your Profile</div>
             <div className="flex gap-2 mt-2">

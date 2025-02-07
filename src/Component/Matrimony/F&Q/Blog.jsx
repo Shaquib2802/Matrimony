@@ -27,7 +27,7 @@ const Blog = () => {
         <div className="text-4xl mt-5 font-semibold text-center text-orange-500">
           POPULAR POSTS
         </div>
-        <div className="grid grid-cols-3  w-[90%] mx-auto mt-10 ">
+        <div className="grid grid-cols-3   w-[90%] mx-auto my-10 ">
         {/*   <div className="flex flex-col border rounded-lg shadow-xl  w-[90%] py-3">
             <div className=" flex justify-center ">
               <img
@@ -64,7 +64,7 @@ const Blog = () => {
           {Array.isArray(data) &&data?.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col border rounded-lg shadow-xl w-[90%] py-3"
+              className="flex flex-col border mt-5 rounded-lg shadow-xl w-[90%] py-3"
             >
               <div className="flex justify-center w-[60%] h-[80%] mx-auto border-2">
              

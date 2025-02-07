@@ -5,9 +5,6 @@ import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useNavigate } from "react-router-dom";
-
-
-
 const Upgrade = () => {
     const navigate = useNavigate();
   return (
@@ -111,7 +108,9 @@ const Upgrade = () => {
           </div>
           <div className="grid grid-cols-3 my-5  ">
             <div className="flex flex-col border mt-8 border-gray-400 rounded-lg py-5 h-fit w-[85%]">
-              <div className="border rounded-full border-gray-400   hover:bg-gray-300 cursor-pointer h-5 w-5 mx-auto"></div>
+              <div className="border rounded-full border-gray-400   hover:bg-gray-300 cursor-pointer h-5 w-5 mx-auto">
+
+              </div>
               <div className="mx-auto text-center pb-2 font-semibold mt-2 border-b w-[70%]">
                 GOLD{" "}
               </div>

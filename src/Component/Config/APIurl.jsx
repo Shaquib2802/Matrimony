@@ -7,5 +7,6 @@ export const ApiUrl = {
   edit: "/updateprofile/",
   f_q: "/faq-api/",
   blog: "/get-blog/",
-  search: "/search-profiles/"
+  search: "/search-profiles/",
+  visit: "/visit-profile/"
 };

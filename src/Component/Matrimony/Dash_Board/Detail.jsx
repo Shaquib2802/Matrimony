@@ -1,15 +1,50 @@
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
-import { useLocation } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
 import Bottom_dash from "./Bottom_dash";
 import HeaderDash from "./HeaderDash";
+import { get_Visit } from "../../Service/Get_pref";
 
 const Detail = () => {
   const { state } = useLocation();
-  console.log("New_State", state);
+  const navigate = useNavigate();
+
+  console.log("ID >>>>", state?.data?.id);
+
+  useEffect(() => {
+    const checkProfileVisits = async () => {
+      const profile_id = state?.data?.id;
+      try {
+       
+        console.log(" Sending Profile ID:", profile_id);
+        const response = await get_Visit(profile_id);
+        console.log("Profile Visit API Response:", response);
+
+        if (response?.data?.message === "You have already visited a profile. Please buy a plan to visit more profiles.") {
+          navigate("/upg");
+        } else {
+          console.log("Profile visit is allowed.");
+        }
+
+      /*   if (Array.isArray(response?.data)) {
+          setVisitedProfiles(response.data);
+
+          if (response.data.length >= 3) {
+            navigate("/upg");
+          }
+        } else {
+          console.error("Profile visit data is not an array", response?.data);
+          setVisitedProfiles();
+        } */
+      } catch (error) {
+        console.error("Error fetching profile visit data:", error);
+      }
+    };
+
+    checkProfileVisits();
+  }, [state, navigate]);
   return (
     <div className="bg-gray-50">
       <HeaderDash />
@@ -18,14 +53,16 @@ const Detail = () => {
           <div>
             <img
               className="rounded-xl"
-              src={`http://192.168.1.188:8098/${state?.data?.profile_picture }`}
+              src={`http://192.168.1.188:8098/${state?.data?.profile_picture}`}
               alt=""
             />
           </div>
         </div>
         <div className="w-[67%] p-5  ">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-semibold">{state?.data?.user_name}</div>
+            <div className="text-2xl font-semibold">
+              {state?.data?.user_name}
+            </div>
             <div>
               <SlOptionsVertical />
             </div>
@@ -50,7 +87,9 @@ const Detail = () => {
                 alt=""
               />
             </div>
-            <div className="text-gray-600 font-semibold">19 Yrs, 5'3"</div>
+            <div className="text-gray-600 font-semibold">
+              {state?.data.age} Yrs, 5'3"
+            </div>
           </div>
           <div className="flex mt-2 items-center gap-x-2">
             <div>
@@ -86,7 +125,9 @@ const Detail = () => {
         </div>
       </div>
       <div className="border rounded-xl shadow-lg w-[85%] mx-auto py-10 px-7">
-        <div className="text-xl font-semibold">About {state?.data.user_name}</div>
+        <div className="text-xl font-semibold">
+          About {state?.data.user_name}
+        </div>
         <div className="mt-2">
           My sister is a business person with a Bachelor's degree currently
           living in Kanpur.
@@ -103,7 +144,9 @@ const Detail = () => {
               </div>
               <div className="text-sm font-semibold text-gray-700">Age</div>
             </div>
-            <div className="font-semibold">{state?.data.age} Years and 8 months</div>
+            <div className="font-semibold">
+              {state?.data.age} Years and 8 months
+            </div>
           </div>
           <div className="flex   gap-x-36   justify-start  items-center">
             <div className="flex border items-center gap-x-3 ">
@@ -142,7 +185,7 @@ const Detail = () => {
                 />
               </div>
               <div className="text-sm font-semibold text-gray-700">
-              Marital Status
+                Marital Status
               </div>
             </div>
             <div className="font-semibold">{state?.data?.marital_status}</div>
@@ -156,11 +199,12 @@ const Detail = () => {
                 />
               </div>
               <div className="text-sm font-semibold text-gray-700">
-              Lives In
-
+                Lives In
               </div>
             </div>
-            <div className="font-semibold">{state?.data?.address}, Uttar Pradesh</div>
+            <div className="font-semibold">
+              {state?.data?.address}, Uttar Pradesh
+            </div>
           </div>
           <div className="flex   gap-x-32   justify-start items-center">
             <div className="flex  items-center gap-x-3 ">
@@ -171,12 +215,10 @@ const Detail = () => {
                 />
               </div>
               <div className="text-sm font-semibold text-gray-700">
-              Citizenship
-
+                Citizenship
               </div>
             </div>
-            <div className="font-semibold">Indian Citizen
-            </div>
+            <div className="font-semibold">Indian Citizen</div>
           </div>
           <div className="flex    gap-x-32   justify-start items-center">
             <div className="flex  items-center gap-x-3 ">
@@ -187,12 +229,10 @@ const Detail = () => {
                 />
               </div>
               <div className="text-sm font-semibold text-gray-700">
-              Profession
-
+                Profession
               </div>
             </div>
-            <div className="font-semibold">{state?.data?.profession}
-            </div>
+            <div className="font-semibold">{state?.data?.profession}</div>
           </div>
           <div className="flex   gap-x-40   justify-start  items-center">
             <div className="flex  items-center gap-x-3 ">
@@ -202,13 +242,9 @@ const Detail = () => {
                   alt=""
                 />
               </div>
-              <div className="text-sm font-semibold text-gray-700">
-              Email
-
-              </div>
+              <div className="text-sm font-semibold text-gray-700">Email</div>
             </div>
-            <div className="font-semibold">{state?.data?.email}
-            </div>
+            <div className="font-semibold">{state?.data?.email}</div>
           </div>
           <div className="flex gap-x-40   justify-start items-center">
             <div className="flex  items-center gap-x-3 ">
@@ -218,17 +254,13 @@ const Detail = () => {
                   alt=""
                 />
               </div>
-              <div className="text-sm font-semibold text-gray-700">
-              Salary
-
-              </div>
+              <div className="text-sm font-semibold text-gray-700">Salary</div>
             </div>
-            <div className="font-semibold">{state?.data?.income}
-            </div>
+            <div className="font-semibold">{state?.data?.income}</div>
           </div>
         </div>
       </div>
-      <Bottom_dash/>
+      <Bottom_dash />
     </div>
   );
 };
