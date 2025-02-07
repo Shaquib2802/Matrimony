@@ -91,7 +91,7 @@ const Header = () => {
               onClick={handleClose}
             >
               <div
-                className="bg-white w-[90%] md:w-[40%] border rounded-2xl p-6 relative"
+                className="bg-white w-[100%] md:w-[40%] border rounded-2xl p-5 relative"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
@@ -123,7 +123,7 @@ const Header = () => {
                     login.
                   </div>
                   <div className="w-[85%] my-5 border border-black rounded-md flex mx-auto">
-                    <div className="w-[75%] p-2">
+                    <div className="  w-[100%] p-2">
                       {!open1 ? (
                         <input
                           type="email"
@@ -131,7 +131,7 @@ const Header = () => {
                           onChange={handleChange}
                           value={data.email}
                           placeholder="Enter Email"
-                          className="outline-none  placeholder:outline-none bg-white border-none ml-1"
+                          className="outline-none    placeholder: w-[100%]  border-none ml-1"
                         />
                       ) : (
                         <input
@@ -140,7 +140,7 @@ const Header = () => {
                           onChange={handleChange}
                           value={data.otp}
                           placeholder="Enter OTP"
-                          className="outline-none placeholder:outline-none bg-white border-none ml-1 w-full"
+                          className="outline-none placeholder:outline-none  bg-white border-none ml-1 "
                         />
                       )}
                     </div>
