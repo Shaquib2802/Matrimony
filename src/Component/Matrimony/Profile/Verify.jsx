@@ -6,14 +6,14 @@ const Verify = () => {
   return (
     <div className="w-[100%]">
       <Pro_Head />
-      <div className="bg-[#206ba5] flex flex-col py-8 gap-y-2 ">
+      <div className="bg-[#f2090b] flex flex-col py-8 gap-y-2 ">
         <div className="mx-auto">
           <img
             src="	https://imgs.hindimatrimony.com/bmimgs/trust-badge-icon.png"
             alt=""
           />
         </div>
-        <div className="text-white text-xl mx-auto">
+        <div className="text-white font-semibold text-xl mx-auto">
           Your profile is pending verification
         </div>
       </div>

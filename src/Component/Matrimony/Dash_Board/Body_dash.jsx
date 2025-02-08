@@ -67,12 +67,12 @@ const Body_dash = () => {
     <div className="w-[100%] ">
       <div className="border-t-2 border-gray-300 my-14 w-[55%] mx-auto relative z-20 ">
         <div className="flex w-[35%] h-10 border rounded-3xl absolute -top-5 left-[30%] shadow-lg bg-white   justify-around">
-          <div className="border  border-[#f2090b] text-sm pt-2 text-[#f2090b] font-semibold bg-orange-100 rounded-3xl text-center  w-[55%] ">
+          <div className="border  border-[#f2090b] text-sm pt-2 text-[#f2090b] font-semibold bg-red-100 rounded-3xl text-center  w-[55%] ">
             Regular
           </div>
           <div
             onClick={() => navigate("/prime")}
-            className=" text-center w-[45%] text-sm pt-2 font-semibold"
+            className=" text-center  w-[45%] text-sm pt-2 font-semibold"
           >
             PRIME
           </div>
