@@ -67,7 +67,7 @@ const Body_dash = () => {
     <div className="w-[100%] ">
       <div className="border-t-2 border-gray-300 my-14 w-[55%] mx-auto relative z-20 ">
         <div className="flex w-[35%] h-10 border rounded-3xl absolute -top-5 left-[30%] shadow-lg bg-white   justify-around">
-          <div className="border  border-orange-500 text-sm pt-2 text-orange-500 font-semibold bg-orange-100 rounded-3xl text-center  w-[55%] ">
+          <div className="border  border-[#f2090b] text-sm pt-2 text-[#f2090b] font-semibold bg-orange-100 rounded-3xl text-center  w-[55%] ">
             Regular
           </div>
           <div
@@ -104,7 +104,7 @@ const Body_dash = () => {
           </div>
           <div
             onClick={() => navigate("/upg")}
-            className="border cursor-pointer p-1 border-orange-600 mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-orange-500 mx-auto"
+            className="border cursor-pointer p-1 border-[#f2090b] mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-[#f2090b] mx-auto"
           >
             Upgrade
           </div>
@@ -208,7 +208,7 @@ const Body_dash = () => {
           </div>
         </div>
         <div className="w-[75%] ">
-          <div className="h-14  border rounded-lg border-orange-300 flex justify-around items-center">
+          <div className="h-14  border rounded-lg border-[#f2090b] flex justify-around items-center">
             <div>
               <img
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/verify-profile-img.svg"
@@ -221,7 +221,7 @@ const Body_dash = () => {
             </div>
             <div
               onClick={() => navigate("/ver")}
-              className="border cursor-pointer border-orange-600  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-orange-600 text-white "
+              className="border cursor-pointer border-[#f2090b]  rounded-2xl  text-center font-semibold text-sm w-28 h-7 pt-1 bg-[#f2090b] text-white  "
             >
               Verify Profile
             </div>
@@ -246,11 +246,11 @@ const Body_dash = () => {
               <div className="text-xl font-semibold">All Matches (271)</div>
 
               <div className="flex gap-x-2">
-                <div className="text-orange-500 text-sm font-semibold mt-0.5">
+                <div className="text-[#f2090b] text-sm font-semibold mt-0.5">
                   See all
                 </div>
                 <div>
-                  <ArrowForwardIosIcon className="!text-xs !text-orange-500" />
+                  <ArrowForwardIosIcon className="!text-xs !text-[#f2090b]" />
                 </div>
               </div>
             </div>
@@ -336,11 +336,11 @@ const Body_dash = () => {
               </div>
 
               <div className="flex gap-x-2">
-                <div className="text-orange-500 text-sm font-semibold mt-0.5">
+                <div className="text-[#f2090b] text-sm font-semibold mt-0.5">
                   See all
                 </div>
                 <div>
-                  <ArrowForwardIosIcon className="!text-xs !text-orange-500" />
+                  <ArrowForwardIosIcon className="!text-xs !text-[#f2090b]" />
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ const Body_dash = () => {
               </div>
               <div className="flex w-[8%] h-2.5 bg-gray-200 rounded-full  mt-1.5 dark:bg-gray-200">
                 <div
-                  className="flex flex-col justify-center rounded-full overflow-hidden bg-orange-600  dark:bg-orange-600"
+                  className="flex flex-col justify-center rounded-full overflow-hidden bg-[#f2090b] dark:bg-[#f2090b]"
                   style={{ width: "40%" }}
                 ></div>
               </div>
@@ -418,7 +418,7 @@ const Body_dash = () => {
                 <div className="w-[50%] absolute top-16 text-sm font-medium right-5">
                   Your photo is the first thing that your matches look at{" "}
                 </div>
-                <div className="border p-1 border-orange-600  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-orange-600 text-white">
+                <div className="border p-1 border-[#f2090b]  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-[#f2090b] text-white">
                   Add Photo
                 </div>
               </div>
@@ -426,7 +426,7 @@ const Body_dash = () => {
                 <div className="w-[50%] absolute top-5 font-medium right-5">
                   Get 10x more response by verifying your profile with a Govt ID
                 </div>
-                <div className="border p-1 border-orange-600  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-orange-600 text-white">
+                <div className="border p-1 border-[#f2090b]  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-[#f2090b] text-white">
                   Verify Profile With ID
                 </div>
               </div>
@@ -436,11 +436,11 @@ const Body_dash = () => {
             <div className="text-xl font-semibold">New Matches (18)</div>
 
             <div className="flex gap-x-2">
-              <div className="text-orange-500 text-sm font-semibold mt-0.5">
+              <div className="text-[#f2090b] text-sm font-semibold mt-0.5">
                 See all
               </div>
               <div>
-                <ArrowForwardIosIcon className="!text-xs !text-orange-500" />
+                <ArrowForwardIosIcon className="!text-xs !text-[#f2090b]" />
               </div>
             </div>
           </div>
@@ -549,7 +549,7 @@ const Body_dash = () => {
                 <div className="w-[50%] absolute top-16 text-sm font-medium right-5">
                   Your photo is the first thing that your matches look at{" "}
                 </div>
-                <div className="border p-1 border-orange-600  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-orange-600 text-white">
+                <div className="border p-1 border-[#f2090b] rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-[#f2090b] text-white">
                   Add More Photo
                 </div>
               </div>
@@ -558,7 +558,7 @@ const Body_dash = () => {
                   Add your hobbies and interests to discover matches with
                   similar interests
                 </div>
-                <div className="border p-1 border-orange-600  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-orange-600 text-white">
+                <div className="border p-1 border-[#f2090b]  rounded-3xl  text-center font-semibold text-sm absolute top-28 right-9 w-48 bg-[#f2090b] text-white">
                   Add Hobbies
                 </div>
               </div>
@@ -674,7 +674,7 @@ const Body_dash = () => {
                     Get personalised service from a dedicated Relationship
                     Manager
                   </div>
-                  <div className="border p-2 border-orange-600  rounded-3xl  text-center font-semibold text-sm absolute top-20 left-40 w-28 bg-orange-600 text-white">
+                  <div className="border p-2 border-[#f2090b]  rounded-3xl  text-center font-semibold text-sm absolute top-20 left-40 w-28 bg-[#f2090b] text-white">
                     Add Photo
                   </div>
                 </div>

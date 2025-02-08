@@ -73,7 +73,7 @@ const navigate= useNavigate();
                     className="border px-2 mt-2 placeholder: text-xs h-6 w-[30%] border-gray-600 rounded"
                     placeholder="Enter your email"
                   />
-                  <button className="bg-orange-500 text-white rounded text-sm font-semibold px-2 py-0.5">
+                  <button className="bg-[#f2090b] text-white rounded text-sm font-semibold px-2 py-0.5">
                     Save
                   </button>
                   <button className="bg-gray-400 text-white rounded text-sm font-semibold px-2 py-0.5">
@@ -121,7 +121,7 @@ const navigate= useNavigate();
                       placeholder=""
                     />
                   </div>
-                  <button className="bg-orange-500 text-white rounded text-sm font-semibold px-2 py-0.5">
+                  <button className="bg-[#f2090b] text-white rounded text-sm font-semibold px-2 py-0.5">
                     Change Password
                   </button>
                 </div>

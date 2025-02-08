@@ -78,8 +78,8 @@ const HeaderDash = () => {
       
         <div>
         <div
-          className={`hover:cursor-pointer flex mt-4 relative text-black hover:text-orange-500 ${
-            open ? "text-orange-500" : ""
+          className={`hover:cursor-pointer flex mt-4 relative text-black hover:text-[#f2090b] ${
+            open ? "text-[#f2090b]" : ""
           }`}
           onMouseEnter={handleOpen}
           onMouseLeave={handleClose}
@@ -111,7 +111,7 @@ const HeaderDash = () => {
                 </div>
                 <div
                   onClick={() => navigate("/upg")}
-                  className="border cursor-pointer p-1 border-orange-600 mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-orange-500 mx-auto"
+                  className="border cursor-pointer p-1 border-[#f2090b] mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-[#f2090b] mx-auto"
                 >
                   Upgrade
                 </div>

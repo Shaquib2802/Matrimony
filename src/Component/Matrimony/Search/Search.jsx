@@ -33,7 +33,7 @@ const Search = () => {
   });
 
   return (
-    <div className=" h-screen bg-orange-400">
+    <div className=" h-screen bg-[#f2090b]">
       <HeaderDash />
       <div className="w-[55%] mt-[5%] border rounded-md border-black shadow-lg mx-auto bg-white">
         <div className="m-5">
@@ -91,7 +91,7 @@ const Search = () => {
 
             <button
               type="submit"
-              className="hover:bg-orange-500 rounded-md mt-5 bg-orange-400 border p-1 w-[20%] font-bold mx-auto"
+              className="hover:bg-[#f2090b] rounded-md mt-5 bg-[#f2090b] border p-1 w-[20%] font-bold mx-auto"
             >
               Search
             </button>

@@ -3,6 +3,7 @@ import Home from "./Home";
 import Contact_Pol from "./Contact_Pol";
 import Abuse from "./Abuse";
 import Safe_Bottom from "./Safe_Bottom";
+import { useNavigate } from "react-router-dom";
 
 const Safe = () => {
   const [selectedPic, setSelectedPic] = useState("Home");
@@ -12,12 +13,12 @@ const Safe = () => {
     Contact: () => <Contact_Pol />,
     Abuse: () => <Abuse />,
   };
-
+const navigate= useNavigate();
   return (
     <div>
       <div className="bg-blue-50 pt-4 w-full px-32">
         <div className="  flex justify-between items-center p-2">
-          <div>
+          <div className="cursor-pointer" onClick={()=> navigate("/dash")}>
             <img
               src="https://imgs.bharatmatrimony.com/bmimgs/bharatmatrimony-logo.png"
               alt="Bharat Matrimony Logo"
@@ -31,26 +32,26 @@ const Safe = () => {
 
         <div className="mt-5 bg-[#5E5D5D] flex text-white font-semibold text-sm">
           <div
-            className={`w-20 h-9 text-center pt-2 border-r ${
-              selectedPic === "Home" ? "bg-orange-500" : "hover:bg-orange-500"
+            className={`w-20 h-9 text-center pt-2 cursor-pointer border-r ${
+              selectedPic === "Home" ? "bg-[#f2090b]" : "hover:bg-[#f2090b]"
             }`}
             onClick={() => setSelectedPic("Home")}
           >
             Home
           </div>
           <div
-            className={`w-32 h-9 text-center pt-2 border-r ${
+            className={`w-32 h-9 text-center pt-2 cursor-pointer border-r ${
               selectedPic === "Contact"
-                ? "bg-orange-500"
-                : "hover:bg-orange-500"
+                ? "bg-[#f2090b]"
+                : "hover:bg-[#f2090b]"
             }`}
             onClick={() => setSelectedPic("Contact")}
           >
             Contact Police
           </div>
           <div
-            className={`w-28 h-9 text-center pt-2 border-r ${
-              selectedPic === "Abuse" ? "bg-orange-500" : "hover:bg-orange-500"
+            className={`w-28 h-9 text-center pt-2 cursor-pointer border-r ${
+              selectedPic === "Abuse" ? "bg-[#f2090b]" : "hover:bg-[#f2090b]"
             }`}
             onClick={() => setSelectedPic("Abuse")}
           >

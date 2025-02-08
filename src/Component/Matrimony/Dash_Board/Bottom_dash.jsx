@@ -38,42 +38,42 @@ const Bottom_dash = () => {
           <div className="w-[20%]  flex flex-col mt-14">
             <div className=" font-medium text-lg"> Help & Support</div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">24x7 Live help</div>
-              <div className="hover:text-orange-300">Contact us</div>
-              <div className="hover:text-orange-300 cursor-pointer" onClick={()=> navigate("/blog")}>Blog</div>
-              <div className="hover:text-orange-300 cursor-pointer" onClick={()=> navigate("/fq")}>FAQs</div>
+              <div className="hover:text-[#f2090b]">24x7 Live help</div>
+              <div className="hover:text-[#f2090b]">Contact us</div>
+              <div className="hover:text-[#f2090b] cursor-pointer" onClick={()=> navigate("/blog")}>Blog</div>
+              <div className="hover:text-[#f2090b] cursor-pointer" onClick={()=> navigate("/fq")}>FAQs</div>
             </div>
             <div className=" font-medium mt-5 text-lg">Our Other Services</div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">EliteMatrimony.com</div>
+              <div className="hover:text-[#f2090b]">EliteMatrimony.com</div>
             </div>
             <div className=" font-medium mt-5 text-lg"> Social Initiatives</div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">AbilityMatrimony.com</div>
-              <div className="hover:text-orange-300">Happymarriages.com</div>
+              <div className="hover:text-[#f2090b]">AbilityMatrimony.com</div>
+              <div className="hover:text-[#f2090b]">Happymarriages.com</div>
             </div>
             <div className=" font-medium text-lg mt-5">
               {" "}
               Our Wedding Services
             </div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">MatrimonyMandaps.com</div>
+              <div className="hover:text-[#f2090b]">MatrimonyMandaps.com</div>
             </div>
           </div>
           <div className="w-[20%]  flex flex-col mt-14">
             <div className=" font-medium text-lg"> Information</div>
             <div className="flex flex-col  text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">About Us</div>
-              <div className="hover:text-orange-300">Awards</div>
-              <div className="hover:text-orange-300">Milestones</div>
-              <div className="hover:text-orange-300">Success stories</div>
-              <div className="hover:text-orange-300">Careers</div>
-              <div className="hover:text-orange-300">Media Room</div>
-              <div className="hover:text-orange-300">Affiliates</div>
-              <div className="hover:text-orange-300">TV Commercials</div>
-              <div className="hover:text-orange-300">Advertise with us</div>
-              <div className="hover:text-orange-300">Terms & Conditions</div>
-              <div className="hover:text-orange-300">Privacy Policy</div>
+              <div className="hover:text-[#f2090b]">About Us</div>
+              <div className="hover:text-[#f2090b]">Awards</div>
+              <div className="hover:text-[#f2090b]">Milestones</div>
+              <div className="hover:text-[#f2090b]">Success stories</div>
+              <div className="hover:text-[#f2090b]">Careers</div>
+              <div className="hover:text-[#f2090b]">Media Room</div>
+              <div className="hover:text-[#f2090b]">Affiliates</div>
+              <div className="hover:text-[#f2090b]">TV Commercials</div>
+              <div className="hover:text-[#f2090b]">Advertise with us</div>
+              <div className="hover:text-[#f2090b]">Terms & Conditions</div>
+              <div className="hover:text-[#f2090b]">Privacy Policy</div>
             </div>
           </div>
           <div className="w-[20%]  flex flex-col mt-14">
@@ -82,17 +82,17 @@ const Bottom_dash = () => {
               Related Matrimony Services
             </div>
             <div className="flex flex-col text-xs mt-5 leading-relaxed gap-y-2 tracking-widest font-semibold text-gray-400">
-              <div className="hover:text-orange-300">HappyMarriages.com</div>
-              <div className="hover:text-orange-300">Safe Matrimony</div>
-              <div className="hover:text-orange-300">Matrimonial Tools</div>
-              <div className="hover:text-orange-300">Matrimonial Sites</div>
-              <div className="hover:text-orange-300">Hindi Matrimonials</div>
-              <div className="hover:text-orange-300">Matrimonial Websites</div>
-              <div className="hover:text-orange-300">
+              <div className="hover:text-[#f2090b] cursor-pointer">HappyMarriages.com</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Safe Matrimony</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Matrimonial Tools</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Matrimonial Sites</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Hindi Matrimonials</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Matrimonial Websites</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">
                 Hindi Matrimony Branches
               </div>
-              <div className="hover:text-orange-300">Marriage Halls</div>
-              <div className="hover:text-orange-300">Banquet Halls</div>
+              <div className="hover:text-[#f2090b] cursor-pointer">Marriage Halls</div>
+              <div className="hover:text-o[#f2090b] cursor-pointer">Banquet Halls</div>
             </div>
           </div>
         </div>

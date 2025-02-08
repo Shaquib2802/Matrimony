@@ -207,7 +207,7 @@
                   placeholder="Enter Verification Code"
                 />
               </div>
-            <button type="submit" className="border p-1 mt-5 bg-orange-500 font-bold text-white rounded-md shadow-xl">SUBMIT</button>
+            <button type="submit" className="border p-1 mt-5 bg-[#f2090b] font-bold text-white rounded-md shadow-xl">SUBMIT</button>
             </div>
           </form>
         </div>

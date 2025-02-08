@@ -53,7 +53,7 @@ const Upgrade = () => {
         <div className=" mx-auto">
           <div className="flex mx-auto gap-x-2 mt-7">
             <div>
-              <TiTick className="text-lg mt-1  text-orange-500 font-bold" />
+              <TiTick className="text-lg mt-1  text-[#f2090b] font-bold" />
             </div>
             <div>
               Send <span className="font-semibold">unlimited messages</span> &{" "}
@@ -63,7 +63,7 @@ const Upgrade = () => {
           </div>
           <div className="flex mx-auto gap-x-2 mt-3">
             <div>
-              <TiTick className="text-lg mt-1  text-orange-500 font-bold" />
+              <TiTick className="text-lg mt-1  text-[#f2090b] font-bold" />
             </div>
             <div>
               Check <span className="font-semibold">compatibility</span> with
@@ -129,7 +129,7 @@ const Upgrade = () => {
               </div>
             </div>
             <div className="flex flex-col border border-gray-400 rounded-lg h-fit w-[85%] ">
-              <div className="bg-[#D73281]  border-t border-[#D73281]  rounded-t-lg p-1 text-center text-white font-semibold">
+              <div className="bg-[#f2090b]  border-t border-[#f2090b]  rounded-t-lg p-1 text-center text-white font-semibold">
                 BEST SELLING
               </div>
               <div className="border rounded-full border-gray-400  mt-5 hover:bg-gray-300 cursor-pointer h-5 w-5 mx-auto"></div>
@@ -176,10 +176,10 @@ const Upgrade = () => {
               Offer Valid Only Today!
             </div>
           </div>
-          <div className="my-5 border text-sm font-semibold text-white bg-orange-600 w-[40%] mx-auto text-center rounded-3xl p-2">
+          <div className="my-5 border text-sm font-semibold text-white bg-[#f2090b] w-[40%] mx-auto text-center rounded-3xl p-2">
           Pay Now ₹1,000
           </div>
-          <div className="flex text-orange-500 mx-auto w-[50%] my-5 justify-center text-sm items-center font-semibold">
+          <div className="flex text-[#f2090b] mx-auto w-[50%] my-5 justify-center text-sm items-center font-semibold">
             <div>View All Packages</div>
             <div><KeyboardArrowRightIcon/></div>
           </div>

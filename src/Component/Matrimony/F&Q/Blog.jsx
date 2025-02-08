@@ -18,13 +18,13 @@ const Blog = () => {
     <div>
       <HeaderDash />
       <div className="w-[100%] my-10">
-        <div className="text-center text-5xl font-bold text-orange-500">
+        <div className="text-center text-5xl font-bold text-[#f2090b]">
           Our Journal
         </div>
         <div className="text-center mt-4 tracking-wider font-semibold">
           Get the latest articles from our journal, writing, discuss and share
         </div>
-        <div className="text-4xl mt-5 font-semibold text-center text-orange-500">
+        <div className="text-4xl mt-5 font-semibold text-center text-[#f2090b]">
           POPULAR POSTS
         </div>
         <div className="grid grid-cols-3   w-[90%] mx-auto my-10 ">

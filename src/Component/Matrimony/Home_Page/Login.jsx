@@ -158,7 +158,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="text-white bg-orange-500 w-[90%] md:w-[80%] p-2 mx-auto rounded-lg mt-5 md:mt-10 font-semibold"
+              className="text-white bg-[#f2090b] w-[90%] md:w-[80%] p-2 mx-auto rounded-lg mt-5 md:mt-10 font-semibold"
             >
               REGISTER FREE
               <TrendingFlatIcon className="ml-2" />

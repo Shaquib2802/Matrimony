@@ -81,7 +81,7 @@ const Header = () => {
           </div>
           <button
             onClick={handleOpen}
-            className="text-xs text-orange-500 font-semibold border border-orange-400 rounded-md py-1 w-16 md:w-24"
+            className="text-xs text-[#f2090b] font-semibold border border-[#f2090b] rounded-md py-1 w-16 md:w-24"
           >
             LOG IN
           </button>
@@ -123,7 +123,7 @@ const Header = () => {
                     login.
                   </div>
                   <div className="w-[85%] my-5 border border-black rounded-md flex mx-auto">
-                    <div className="  w-[100%] p-2">
+                    <div className="  w-[100%] p-3">
                       {!open1 ? (
                         <input
                           type="email"
@@ -131,7 +131,7 @@ const Header = () => {
                           onChange={handleChange}
                           value={data.email}
                           placeholder="Enter Email"
-                          className="outline-none    placeholder: w-[100%]  border-none ml-1"
+                          className="outline-none    placeholder: w-[100%] rounded-md  border-none pl-1"
                         />
                       ) : (
                         <input
@@ -140,7 +140,7 @@ const Header = () => {
                           onChange={handleChange}
                           value={data.otp}
                           placeholder="Enter OTP"
-                          className="outline-none placeholder:outline-none  bg-white border-none ml-1 "
+                          className="outline-none placeholder:outline-none rounded-md bg-white border-none  "
                         />
                       )}
                     </div>

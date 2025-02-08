@@ -4,7 +4,10 @@ export default {
     "./index.html",
   ],
   theme: {
-    extend: {},
+    extend: {colors: {
+        primary: "#3498db", // Custom blue
+        secondary: "#2ecc71", // Custom green
+      },},
   },
   plugins: [],
 }

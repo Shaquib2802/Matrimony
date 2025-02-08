@@ -31,7 +31,7 @@ const F_andQ = () => {
     <div>
       <HeaderDash />
       <div className=' relative bg-[url("https://static-assets-web.flixcart.com/fk-sp-static/images/prelogin/banner/Desktop_faq_1.webp")] h-[50vh]  bg-cover  bg-no-repeat  '>
-        <div className="text-5xl font-semibold absolute top-[40%] left-[7%] text-orange-500">
+        <div className="text-5xl font-semibold absolute top-[40%] left-[7%] text-[#f2090b]">
           Frequently Asked Question
         </div>
       </div>
