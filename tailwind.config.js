@@ -4,7 +4,11 @@ export default {
     "./index.html",
   ],
   theme: {
-    extend: {colors: {
+    extend: {
+      fontFamily: {
+        doto: ['Doto', 'sans-serif'],
+      },
+        colors: {
         primary: "#3498db", // Custom blue
         secondary: "#2ecc71", // Custom green
       },},

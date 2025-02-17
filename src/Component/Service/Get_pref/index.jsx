@@ -127,3 +127,20 @@ export const get_Visit = async (id) => {
     console.log(e);
   }
 };
+export const get_Plan = async () => {
+  console.log("this is service data1");
+  try {
+    const response = await axios.get(BaseUrl1 + ApiUrl.plan, {
+   
+      headers: {
+        "Content-Type": "application/json",
+        /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+    });
+
+    return response || [];
+  } catch (e) {
+    console.log(e);
+  }
+};

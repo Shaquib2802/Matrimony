@@ -21,7 +21,7 @@ const Verify = () => {
         <div className="border border-gray-500 shadow-md rounded-3xl p-5">
           <div className="text-2xl font-semibold">ID Verification</div>
           <div className="mt-2 text-gray-800 font-medium">
-            {" "}
+            
             Select one of the below documents to verify your identity
             information. The documents chosen by you will not be shown to other
             members.

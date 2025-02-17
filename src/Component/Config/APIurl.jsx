@@ -8,5 +8,6 @@ export const ApiUrl = {
   f_q: "/faq-api/",
   blog: "/get-blog/",
   search: "/search-profiles/",
-  visit: "/visit-profile/"
+  visit: "/visit-profile/",
+  plan: "/all-plan-api/",
 };

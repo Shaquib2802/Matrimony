@@ -104,7 +104,7 @@ const Body_dash = () => {
           </div>
           <div
             onClick={() => navigate("/upg")}
-            className="border cursor-pointer p-1 border-[#f2090b] mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-[#f2090b] mx-auto"
+            className="border cursor-pointer p-1 font-Doto border-[#f2090b] mt-3 rounded-3xl w-20 text-center font-semibold text-sm text-[#f2090b] mx-auto"
           >
             Upgrade
           </div>
